@@ -327,7 +327,7 @@ cursor: pointer;
     content: "";
     position: absolute;
     top: 7%;
-    left: -5%;
+    left: 105%; /*تغیر جهت خط از سمت چپ به راست*/
     height: 90%;
     width: 1.5px;
     background-color: seagreen;
@@ -388,7 +388,7 @@ cursor: pointer;
     content: "";  
     position: absolute;  
     top: 35%;  
-    right: 2%; /* تغییر به right به جای left */  
+    left: 97%; /* تغییر به right به جای left */  
     height: 1.5px;  
     width: 9%;  
     border-radius: 8px;  
@@ -1289,7 +1289,7 @@ body {
 }
 
 .counter_wrap {
-  position: absolute;
+  position: relative;
   width: 80%;
   display: flex;
   justify-content: space-between;

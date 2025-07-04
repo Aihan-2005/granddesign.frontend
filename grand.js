@@ -280,7 +280,7 @@ function initCounters(){
 
 
   counters.forEach((el,i)=>{
-    const baseValue = paresInt(el.getAttribute("data-count"));
+    const baseValue = parseInt(el.getAttribute("data-count"));
     let currentValue = baseValue;
 
     if(saved){
