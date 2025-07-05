@@ -344,3 +344,15 @@ nav_open.addEventListener("click", () => {
 nav_close.addEventListener("click", () => {
   menu.classList.remove("show_menu");
 });
+//ایجاد بک گراند با اسکرول خوردن
+window.addEventListener("scroll",
+  function(){
+    const navbar = 
+    this.document.querySelector("nav");
+    if(window.scrollY>800){
+      navbar.classList.add("scrolled");
+    } else if (window.scrollY<800){
+      navbar.classList.remove("scrolled");
+    }
+  }
+);
