@@ -31,7 +31,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="flex  items-center w-[100%]  justify-between px-8   bg-gradient-to-r fixed top-0 z-20  shadow-lg"   style={{
+    <nav className="flex  items-center w-[100%]  justify-between px-8   bg-gradient-to-r fixed top-0 z-40  shadow-lg"   style={{
     background: "linear-gradient(to right, rgba(153, 153, 153, 0.999) 45%, #00000000 70%)",
     backdropFilter: "blur(6px)"
   }}
@@ -59,9 +59,9 @@ export default function Navbar() {
       
     {/* لوگو و نام شرکت */}
       <div className="flex items-center gap-4">
-        <span className="text-2xl font-bold text-gray-300 ">
+        {/* <span className="text-2xl font-bold text-gray-300 ">
 نماخانه      
-  </span>
+  </span> */}
           <Image
           src="/images/image.png"
           alt="لوگو آرمان هوم"

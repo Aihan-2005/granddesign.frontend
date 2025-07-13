@@ -1,7 +1,7 @@
 export default function BackgroundImage(){
     return (
         <>
-         <div className="w-[100%] h-[100vh] relative flex justify-center items-end py-3">
+         <div className="w-[100%] h-[100vh] relative flex justify-center items-end my-3">
             <img src="images/homepage.png" alt=""  className="w-[100%] h-[100%]"/>
             <div className="absolute w-[80%] h-[50%]  flex justify-end items-start">
                 <div>

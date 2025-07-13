@@ -5,11 +5,8 @@ export default function LayoutHome({children}){
     return (
         <>
   
-          <Navbar />  
-            
-             
+            <Navbar />  
              {children}
-
              <Footer />
          
 
