@@ -22,7 +22,7 @@ export default function SliderProjects() {
     <div className="py-5">
       <div className='w-[100%] py-2 flex justify-between items-center ' dir='rtl'>
    <div> <p className='text-[white]'>جدید ترین کار ها </p>  <p className='text-[30px] text-[white]'>پروژه های انجام شده </p></div>
-             <button className='text-[white] bg-green-500 rounded-lg hover:scale-[1.1] cursor-pointer h-[50px] px-[20px]'> شروع کار</button>
+             <button className='text-[white] bg-green-500 rounded-lg hover:scale-[1.1]  duration-300 cursor-pointer h-[50px] px-[20px]'> شروع کار</button>
 
         </div>
       <Swiper

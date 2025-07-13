@@ -1,7 +1,10 @@
 import Image from "next/image";
-import BackgroundImage from "./backgroundImage";
-import BackgroundeAboutUs from "./backgoroundAboutUs";
-import SliderProjects from "./sliderProjects";
+import BackgroundImage from "../../../components/home/backgroundImage";
+import BackgroundeAboutUs from "../../../components/home/backgoroundAboutUs";
+import SliderProjects from "../../../components/home/sliderProjects";
+import VideoPlayerHome from "@/components/home/videoHome";
+import WeblogHome from "@/components/home/weblog";
+import NewProjectsHome from "@/components/home/newProjects";
 
 export default function HomePage(){
     return (
@@ -9,7 +12,14 @@ export default function HomePage(){
 <BackgroundImage/>
 <div className="px-[50px]">
 <BackgroundeAboutUs/>
+<NewProjectsHome/>
 <SliderProjects />
+</div>
+<div className="px-[150px]">
+    <VideoPlayerHome />
+</div>
+<div className="px-[50px]">
+    <WeblogHome/>
 </div>
          </>
     )
