@@ -1,7 +1,18 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Navbar() {
+  const params = useParams()
+
+
+useEffect(()=>{
+console.log(params)
+} , [])
+
+
   const items = [
     {
       title: "blog",
@@ -31,9 +42,9 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="flex  items-center w-[100%]  justify-between px-8   bg-gradient-to-r fixed top-0 z-40  shadow-lg"   style={{
+    <nav className={`flex  items-center w-[100%]  justify-between px-8   bg-gradient-to-r ${params.id?"sticky ":"fixed " }top-0 z-40 shadow-lg" `} style={{
     background: "linear-gradient(to right, rgba(153, 153, 153, 0.999) 45%, #00000000 70%)",
-    backdropFilter: "blur(6px)"
+    backdropFilter:  "blur(6px)"
   }}
 >
      {/* لینک‌های ناوبری */}
