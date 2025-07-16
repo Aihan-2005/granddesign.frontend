@@ -43,7 +43,7 @@ export default function NewProjectsHome() {
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex cursor-pointer items-center justify-between bg-[#8c8c8c74] rounded-2xl p-6 mx-4 my-3 hover:bg-[#2a2a2a] hover:shadow-lg transition-all duration-300  border-2 "
+            className="flex gap-3 cursor-pointer items-center justify-between bg-[#8c8c8c74] rounded-2xl p-6 mx-4 my-3 hover:bg-[#2a2a2a] hover:shadow-lg transition-all duration-300  border-2 "
           >
                <Image
               src={`/images/newprojects/se-icon${item.icon}.png`}
