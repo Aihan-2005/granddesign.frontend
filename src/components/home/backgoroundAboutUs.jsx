@@ -1,12 +1,12 @@
 export default function BackgroundeAboutUs(){
     return (
         <>
-<div className="w-full h-auto my-5 relative flex flex-col md:flex-row justify-center items-end " dir="rtl">
+<div className="w-full  h-auto my-5 relative flex flex-col md:flex-row justify-center items-end " dir="rtl">
 
       <img
     src="images/aboutimage.png"
     alt="About Us"
-    className="w-full md:w-[40%] h-full object-cover"
+    className="w-full md:w-[40%] h-full  object-cover"
   />
   <div className="w-full md:w-[60-%] h-full flex justify-between items-center">
     <div className="w-full text-right  px-5 relative">
