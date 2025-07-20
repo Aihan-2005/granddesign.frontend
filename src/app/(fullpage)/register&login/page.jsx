@@ -7,49 +7,42 @@ import Login from "./login"
 import { useEffect } from "react"
 import SendOtp from "./otp"
 
-export default function RegisterAndLoginPage(){
-    const {loginAndRegister}=useLoginStore()
-    // useEffect(()=>{
-    //         console.log(loginAndRegister)
-    // } , [loginAndRegister])
+export default function RegisterAndLoginPage() {
+  const { loginAndRegister } = useLoginStore()
 
-    function returnComponents(){
-        switch (loginAndRegister){
-        case "otp" : 
+  function renderComponent() {
+    switch (loginAndRegister) {
+      case "otp":
         return <SendOtp />
-        case "register" : 
+      case "register":
         return <Register />
-        case "login" : 
+      case "login":
         return <Login />
-        }
-    } 
+      default:
+        return <Login /> // fallback to login if nothing matched
+    }
+  }
 
-    return (
-        <>
-         <div className="w-[100vw] h-[100vh] flex justify-center items-center ">
-              
-              <div className=" w-[100%] h-[100%] lg:w-[1000px]  grid-cols-2 grid  border border-sky-900/40 rounded-2xl lg:h-[600px]">  
-                
-                
-                   <div className="w-[100%] h-[100%] rounded-l-2xl  ">
-<Image src={"/images/imageRegister.png"} alt="image" width={300} height={300} className="w-[100%] h-[100%] rounded-l-2xl" />
-                   </div>
+  return (
+    <div className="w-screen h-screen flex justify-center items-center bg-[#0b1120] px-4">
+      <div className="w-full max-w-[1000px] h-full lg:h-[600px] grid grid-cols-1 lg:grid-cols-2 border border-sky-900/40 rounded-2xl overflow-hidden">
+        
+        {/* Left image (only on large screens) */}
+        <div className="hidden lg:block w-full h-full">
+          <Image
+            src="/images/imageRegister.png"
+            alt="Authentication illustration"
+            width={300}
+            height={300}
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-
-                   {/* information */}
-                   <div className="w-[100%] h-[100%] rounded-r-2xl flex flex-col">
-{returnComponents()}
-
-                   </div>
-                   
-                   
-                   
-                   
-                   </div>
-              
-
-
-         </div>
-         </>
-    )
+        {/* Right content */}
+        <div className="w-full h-full flex flex-col justify-center items-center bg-white dark:bg-[#0e1a34]">
+          {renderComponent()}
+        </div>
+      </div>
+    </div>
+  )
 }

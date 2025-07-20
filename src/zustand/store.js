@@ -14,6 +14,5 @@ setInformationUser: (state) => set((prev) => ({
     informationUser: { ...prev.informationUser, ...state },
   })),
 setResetInformationUser: (state) => set((prev) => ({informationUser: {}})),
-
 }));
 
