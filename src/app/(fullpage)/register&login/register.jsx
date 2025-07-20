@@ -1,6 +1,6 @@
 "use client";
 
-import validOtp from "@/apis/registerandLogin";
+import { validOtp } from "@/apis/registerandLogin";
 import { useLoginStore } from "@/zustand/store";
 import Image from "next/image";
 import { useState } from "react";
@@ -11,10 +11,10 @@ export default function Register() {
   const [information , setInformation] = useState({})
 
    async function callRegister(obj) {
-     const res = await registerFunction(obj)
+     const res = await validOtp(obj)
      if (res.success){
         setInformationUser(information)
-        validOtp("otp")
+        setloginAndRegister("otp")
      }
   }
  
@@ -86,7 +86,7 @@ export default function Register() {
 
       {/* Footer */}
       <p className="mt-6 text-sky-300 text-sm text-center">
-        ثبت نام کرده اید?{" "}
+        ثبت نام کرده اید?
         <span className="text-cyan-400 hover:text-cyan-300 cursor-pointer underline" onClick={()=>setloginAndRegister("login")}>
           ورود
         </span>
