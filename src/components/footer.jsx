@@ -22,7 +22,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-black mt-[10px] text-gray-300 py-10 px-6 w-[100%] mx-auto
-     grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+     grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-end items-end text-right md:text-start">
       {/* ستون 1 - جدیدترین پروژه‌ها */}
       <div className="flex flex-col gap-4">
         <h3 className="text-white font-semibold text-lg mb-3">جدیدترین پروژه های ما</h3>
@@ -76,7 +76,7 @@ export default function Footer() {
       {/* آیکون تلفن */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 text-amber-500"
+        className="h-5 w-5 text-amber-500 "
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"

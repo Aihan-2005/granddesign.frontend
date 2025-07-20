@@ -1,7 +1,7 @@
 export default function BackgroundImage(){
     return (
         <>
-         <div className="w-full h-screen  relative flex justify-center items-end my-3 overflow-hidden">
+         <div className="w-full h-screen mt-0 relative flex justify-center items-end my-3 overflow-hidden">
             <img src="images/homepage.png" alt=""  className="w-full h-full object-cover"/>
             <div className="absolute top-[43%] md:top-[50%] right-[10%] text-right  w-[90%] md:w-[90%] h-[60%] md:h-[50%]  flex justify-end items-start p-0 md:p-1 ">
                 <div>

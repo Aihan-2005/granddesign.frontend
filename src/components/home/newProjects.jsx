@@ -35,7 +35,7 @@ export default function NewProjectsHome() {
   ];
 
   return (
-    <div className="w-full  text-white my-8" dir="rtl">
+    <div className="w-full  text-white my-8 " dir="rtl">
       <div className="my-6 text-center">
         <p className="text-3xl font-bold text-white">خدمات ما</p>
       </div>
@@ -54,8 +54,8 @@ export default function NewProjectsHome() {
 
             />   
               <div className="flex flex-col gap-2">
-              <p className="text-white text-xl font-semibold">{item.title}</p>
-              <p className="text-white text-base opacity-80">{item.text}</p>
+              <p className="text-white text-sm md:text-lg font-semibold">{item.title}</p>
+              <p className="text-white text-sm md:text-base opacity-80">{item.text}</p>
             </div>
     
           </div>

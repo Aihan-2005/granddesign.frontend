@@ -1,10 +1,18 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useMenuStore } from "@/zustand/store";
+import Menu from "./menu";
 
 export default function Navbar() {
+<<<<<<< HEAD
   const [isOpen, setIsOpen] = useState(false);
+=======
+  const isOpen = useMenuStore((state) => state.isOpen);
+const openMenu = useMenuStore((state) => state.openMenu);
+const closeMenu = useMenuStore((state) => state.closeMenu);
+
+>>>>>>> 6128edfc7adb895859c5b0691a852104f728670a
   const items = [
     {
       title: "blog",
@@ -29,12 +37,16 @@ export default function Navbar() {
   ];
 
   return (
+<<<<<<< HEAD
     <nav
       className="flex items-center w-[100%] justify-between px-4 sm:px-8 bg-gradient-to-r fixed top-0 z-40 shadow-lg"
       style={{
         background: "linear-gradient(to right, rgba(153, 153, 153, 0.999) 45%, #00000000 70%)",
         backdropFilter: "blur(6px)",
       }}
+=======
+    <nav className="flex  items-center w-[100%]  justify-between px-4 sm:px-8   bg-gradient-to-r fixed top-0 z-40  shadow-lg bg-gradient-to-r from-[gray] from-40% to-transparent to-90%  "
+>>>>>>> 6128edfc7adb895859c5b0691a852104f728670a
     >
       {/* لینک‌های ناوبری */}
       <div className="hidden md:flex items-center gap-10">
@@ -69,13 +81,19 @@ export default function Navbar() {
       </div>
 
       {/* دکمه سایز موبایل */}
+<<<<<<< HEAD
       <div className="md:hidden">
         <button
           onClick={() => setIsOpen(true)}
+=======
+      <div className="md:hidden ">
+        <button onClick={openMenu}
+>>>>>>> 6128edfc7adb895859c5b0691a852104f728670a
           className="text-white focus:outline-none md:hidden"
         >
           ☰
         </button>
+<<<<<<< HEAD
       </div>
 
       {/* slidebar-سایز موبایل */}
@@ -259,6 +277,15 @@ export default function Navbar() {
           onClick={() => setIsOpen(false)}
         ></div>
       )}
+=======
+         
+      </div>
+
+      
+
+      
+      <Menu isOpen={isOpen} onClose={closeMenu} />
+>>>>>>> 6128edfc7adb895859c5b0691a852104f728670a
     </nav>
   );
 }
