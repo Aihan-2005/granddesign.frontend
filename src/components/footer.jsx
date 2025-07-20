@@ -21,7 +21,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-black mt-[10px] text-gray-300 py-10 px-6 w-[100%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="bg-black mt-[10px] text-gray-300 py-10 px-6 w-[100%] mx-auto
+     grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
       {/* ستون 1 - جدیدترین پروژه‌ها */}
       <div className="flex flex-col gap-4">
         <h3 className="text-white font-semibold text-lg mb-3">جدیدترین پروژه های ما</h3>

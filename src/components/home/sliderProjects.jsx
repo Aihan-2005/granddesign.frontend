@@ -21,17 +21,38 @@ export default function SliderProjects() {
 
   return (
     <div className="py-5">
-      <div className='w-[100%] py-2 flex justify-between items-center ' dir='rtl'>
-   <div> <p className='text-[white]'>جدید ترین کار ها </p>  <p className='text-[30px] text-[white]'>پروژه های انجام شده </p></div>
-             <button className='text-[white] bg-green-500 rounded-lg hover:scale-[1.1]  duration-300 cursor-pointer h-[50px] px-[20px]'> شروع کار</button>
+      <div className='w-[100%] py-2 flex flex-col sm:flex-row
+       justify-between items-center gap-4' dir='rtl'>
+   <div> <p className='text-[white] text-sm sm:text-3xl font-bold'>جدید ترین کار ها </p>
+     <p className='text-xl sm:text-2xl font-bold text-[white]'>پروژه های انجام شده </p></div>
+             <button className='text-[white] bg-green-500 rounded-lg hover:scale-[1.1] 
+              duration-300 cursor-pointer h-[50px] px-[20px] text-sm sm:text-base'> شروع کار</button>
 
         </div>
       <Swiper
         scrollbar={{ hide: true }}
         slidesPerView={4}
         spaceBetween={20}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.2,
+          },
+          480: {
+            slidesPerView: 1.5,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        }}
+        grabCursor={true}
         modules={[Scrollbar]}
-        className="mySwiper h-[400px]"
+        className="mySwiper h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] "
       >
         {Images.map((image, index) => (
 <SwiperSlide key={index}>
