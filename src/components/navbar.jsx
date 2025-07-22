@@ -23,7 +23,7 @@ const closeMenu = useMenuStore((state) => state.closeMenu);
     {
       title: "services",
       textTitle: " تالی",
-      href: "/services",
+      href: "https://momento360.com/e/uc/915652cee28649f7bbc15f57e53f27f4?utm_campaign=embed&utm_source=other&size=large&display-plan=true",
     },
     {
       title: "about",
@@ -34,10 +34,10 @@ const closeMenu = useMenuStore((state) => state.closeMenu);
   ];
 
   return (
-    <nav className="flex  items-center w-[100%]  justify-between px-4 sm:px-8   bg-gradient-to-r fixed top-0 z-40  shadow-lg bg-gradient-to-r from-[gray] from-40% to-transparent to-90%  "
+    <nav className="flex  items-center w-[100%]  justify-between px-4 sm:px-8    fixed top-0 z-40  shadow-lg bg-gradient-to-r from-[gray] from-40% to-transparent to-90%  lg:h-18"
     >
       {/* لینک‌های ناوبری */}
-      <div className="  hidden md:flex items-center gap-10  ">
+      <div className=" lg:ml-20 md:ml-10 hidden  md:flex items-center gap-10  ">
         {/* دکمه فروشگاه */}
         <Link href={"/store"} className="bg-[green] cursor-pointer text-white px-6 py-3 rounded-md text-base font-medium shadow-lg  hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
           فروشگاه
@@ -63,11 +63,11 @@ const closeMenu = useMenuStore((state) => state.closeMenu);
 نماخانه      
   </span> */}
         <Image
-          src="/images/image.png"
+          src="/images/20241027_175834.png"
           alt="لوگو آرمان هوم"
           width={60}
           height={60}
-          className=" transition-transform duration-300 hover:scale-[1.2] font-bold "
+          className=" transition-transform duration-300 scale-[1.2]  "
         />
 
       </div>

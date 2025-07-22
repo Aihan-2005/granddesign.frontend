@@ -5,7 +5,7 @@ import SliderProjects from "../../../components/home/sliderProjects";
 import VideoPlayerHome from "@/components/home/videoHome";
 import WeblogHome from "@/components/home/weblog";
 import NewProjectsHome from "@/components/home/newProjects";
-
+import Team from "@/components/home/team";
 export default function HomePage(){
     return (
         <>
@@ -14,6 +14,10 @@ export default function HomePage(){
 <BackgroundeAboutUs/>
 <NewProjectsHome/>
 <SliderProjects />
+
+</div>
+<div>
+    <Team/>
 </div>
 <div className="px-[150px]">
     <VideoPlayerHome />

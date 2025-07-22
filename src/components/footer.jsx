@@ -22,7 +22,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-black mt-[10px] text-gray-300 py-10 px-6 w-[100%] mx-auto
-     grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-end items-end text-right md:text-start">
+     grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center items-center text-center md:text-start">
       {/* ستون 1 - جدیدترین پروژه‌ها */}
       <div className="flex flex-col gap-4">
         <h3 className="text-white font-semibold text-lg mb-3">جدیدترین پروژه های ما</h3>
@@ -69,14 +69,14 @@ export default function Footer() {
       </div>
 
       {/* ستون 4 - تماس */}
-<div>
+<div >
   <h3 className="text-white font-semibold text-lg mb-4">با ما تماس بگیرید</h3>
-  <div className="text-sm space-y-4">
+  <div className="text-sm space-y-4 max-sm:ml-25 ">
     <div className="flex items-center gap-2">
       {/* آیکون تلفن */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 text-amber-500 "
+        className="h-5 w-5 text-green-600 "
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -85,7 +85,7 @@ export default function Footer() {
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.252 1.09l-2.257 2.257a11.042 11.042 0 005.516 5.516l2.257-2.257a1 1 0 011.09-.252l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
       </svg>
       <p className="font-semibold">تماس</p>
-      <a href="tel:09916393684" className="text-gray-300 hover:text-amber-500 transition">
+      <a href="tel:09916393684" className="text-gray-300 hover:text-green-600 transition">
         09916393684
       </a>
     </div>
@@ -93,7 +93,7 @@ export default function Footer() {
       {/* آیکون ایمیل */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 text-amber-500"
+        className="h-5 w-5 text-green-600"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -102,7 +102,7 @@ export default function Footer() {
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m0 8V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2h14a2 2 0 002-2z" />
       </svg>
       <p className="font-semibold">ایمیل</p>
-      <a href="mailto:mojtaba.shabani2580@gmail.com" className="text-gray-300 hover:text-amber-500 transition">
+      <a href="mailto:mojtaba.shabani2580@gmail.com" className="text-gray-300 hover:text-green-600 transition">
         mojtaba.shabani2580@gmail.com
       </a>
     </div>
@@ -110,7 +110,7 @@ export default function Footer() {
       {/* آیکون مکان */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 text-amber-500"
+        className="h-5 w-5 text-green-600"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
