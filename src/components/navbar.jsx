@@ -59,9 +59,7 @@ const closeMenu = useMenuStore((state) => state.closeMenu);
 
       {/* لوگو و نام شرکت */}
       <div className="flex items-center gap-4 ">
-        {/* <span className="text-2xl font-bold text-gray-300 ">
-نماخانه      
-  </span> */}
+        
         <Image
           src="/images/20241027_175834.png"
           alt="لوگو آرمان هوم"
