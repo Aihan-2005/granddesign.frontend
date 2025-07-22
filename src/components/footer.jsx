@@ -65,6 +65,7 @@ export default function Footer() {
               </Link>
             </li>
           ))}
+          
         </ul>
       </div>
 
