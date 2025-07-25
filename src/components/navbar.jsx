@@ -5,15 +5,12 @@ import { useMenuStore } from "@/zustand/store";
 import Menu from "./menu";
 
 export default function Navbar() {
-<<<<<<< HEAD
-  const [isOpen, setIsOpen] = useState(false);
-=======
   const isOpen = useMenuStore((state) => state.isOpen);
 const openMenu = useMenuStore((state) => state.openMenu);
 const closeMenu = useMenuStore((state) => state.closeMenu);
 
->>>>>>> 6128edfc7adb895859c5b0691a852104f728670a
   const items = [
+    
     {
       title: "blog",
       textTitle: "وبلاگ",
@@ -26,8 +23,8 @@ const closeMenu = useMenuStore((state) => state.closeMenu);
     },
     {
       title: "services",
-      textTitle: "تالی",
-      href: "/services",
+      textTitle: " تالی",
+      href: "https://momento360.com/e/uc/915652cee28649f7bbc15f57e53f27f4?utm_campaign=embed&utm_source=other&size=large&display-plan=true",
     },
     {
       title: "about",
@@ -37,6 +34,7 @@ const closeMenu = useMenuStore((state) => state.closeMenu);
   ];
 
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
     <nav
       className="flex items-center w-[100%] justify-between px-4 sm:px-8 bg-gradient-to-r fixed top-0 z-40 shadow-lg"
@@ -50,6 +48,12 @@ const closeMenu = useMenuStore((state) => state.closeMenu);
     >
       {/* لینک‌های ناوبری */}
       <div className="hidden md:flex items-center gap-10">
+=======
+    <nav className="flex  items-center w-[100%]  justify-between px-4 sm:px-8    fixed top-0 z-40  shadow-lg bg-gradient-to-r from-[gray] from-40% to-transparent to-90%  lg:h-18"
+    >
+      {/* لینک‌های ناوبری */}
+      <div className=" lg:ml-20 md:ml-10 hidden  md:flex items-center gap-10  ">
+>>>>>>> 43e184b8d6c125a71fa514eeb522b6450374695a
         {/* دکمه فروشگاه */}
         <Link
           href={"/store"}
@@ -70,13 +74,22 @@ const closeMenu = useMenuStore((state) => state.closeMenu);
       </div>
 
       {/* لوگو و نام شرکت */}
+<<<<<<< HEAD
       <div className="flex items-center gap-4">
+=======
+      <div className="flex items-center gap-4 ">
+        
+>>>>>>> 43e184b8d6c125a71fa514eeb522b6450374695a
         <Image
-          src="/images/image.png"
+          src="/images/20241027_175834.png"
           alt="لوگو آرمان هوم"
           width={60}
           height={60}
+<<<<<<< HEAD
           className="transition-transform duration-300 hover:scale-[1.2] font-bold"
+=======
+          className=" transition-transform duration-300 scale-[1.2]  "
+>>>>>>> 43e184b8d6c125a71fa514eeb522b6450374695a
         />
       </div>
 
