@@ -1,5 +1,6 @@
 "use client";
 
+import { login, validOtp } from "@/apis/registerandLogin";
 import { useLoginStore } from "@/zustand/store";
 import Image from "next/image";
 import { useState } from "react";
@@ -66,7 +67,8 @@ export default function Login() {
       {/* Button */}
       <button className="w-full max-w-sm mt-8 py-3 rounded-lg bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 cursor-pointer text-white font-semibold transition-transform hover:-translate-y-0.5 duration-200 shadow-lg"
        onClick={()=>{
-        
+        validOtp(information)
+        setloginAndRegister("otp")
        }}
       >
         ورود
