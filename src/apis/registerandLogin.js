@@ -38,16 +38,16 @@ export async function registerFunction(obj) {
 }
 
 
-// export async function login(obj) {
-//   const url = `${process.env.URL_APIS}/api/v1/auth/login`
-//   const res = await fetch(url, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(obj),
-//   })
-//   const response = await res.json()
-//   console.log(response)
-//   return response
-// }
+export async function login(obj) {
+  const url = `${process.env.URL_APIS}/api/v1/auth/login`
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(obj),
+  })
+  const response = await res.json()
+  console.log(response)
+  return response
+}
