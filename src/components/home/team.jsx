@@ -49,10 +49,12 @@ return () => clearInterval(interval);
     const member = teamMembers[index];
 
   return (
+    <div>
+        <h1 className='text-white text-center text-3xl font-bold  mt-40 ' >تیم ما </h1>
     <div onClick={handleCliick} className='cursor-pointer w-full max-w-[90%] sm:max-w-[500px] md:max-w-[700px]
     mx-auto relative 
     bg-gradient-to-r from-[#6d6d6d]  via-[#4f4f4f] to-[#212121b3]  p-6 rounded-lg shadow-lg shadow-[#2a2a2a] hover:shadow-xl transition-all  hover:shadow-[#5d5d5d]
-     duration-500 ease-in-out opacity-100  my-7 h-auto text-white border-2 border-[#886622b3]  hover:bg-[#868686fc]   ' >
+     duration-500 ease-in-out opacity-100  mb-30 mt-10 h-auto text-white border-2 border-[#886622b3]  hover:bg-[#868686fc]   ' >
         
         <AnimatePresence mode="wait"/>
         <motion.div
@@ -68,12 +70,13 @@ return () => clearInterval(interval);
         
        
         <div>
-            <img src={member.image} alt={member.name} className='h-20 w-30 rounded-lg  border-[#916d25b3] mt-40 border-2 flex flex-row ml-60 sm:ml-80 md:ml-130 '/>
-             <p className='text-white text-xs sm:text-sm  mt-2 mr-5 text-end'>{member.name}</p>
-        <p className='tetxt-gray-500 text-sm  mr-5 text-end'>{member.role}</p>
+            <img src={member.image} alt={member.name} className='h-20 w-30 rounded-lg  border-[#916d25b3] mt-40 border-2 flex flex-row  sm:ml-80 md:ml-130 '/>
+             <p className='text-white text-xs sm:text-sm  mt-2 mr-5 sm:text-end'>{member.name}</p>
+        <p className='tetxt-gray-500 text-sm  mr-5 sm:text-end'>{member.role}</p>
         </div>
         
         
+    </div>
     </div>
   )
 }

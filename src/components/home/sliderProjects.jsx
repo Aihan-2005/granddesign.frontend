@@ -24,8 +24,8 @@ export default function SliderProjects() {
        justify-between items-center gap-4' dir='rtl'>
    <div> <p className='text-[white] text-sm sm:text-3xl font-bold'>جدید ترین کار ها </p>
      <p className='text-xl sm:text-2xl font-bold text-[white]'>پروژه های انجام شده </p></div>
-             <button className='text-[white] bg-green-500 rounded-lg hover:scale-[1.1] 
-              duration-300 cursor-pointer h-[50px] px-[20px] text-sm sm:text-base'> شروع کار</button>
+             {/* <button className='text-[white] bg-green-500 rounded-lg hover:scale-[1.1] 
+              duration-300 cursor-pointer h-[50px] px-[20px] text-sm sm:text-base'> شروع کار</button> */}
 
         </div>
       <Swiper
