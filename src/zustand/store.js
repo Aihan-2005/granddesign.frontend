@@ -10,3 +10,9 @@ export const  useTestStore = create((set) => ({
   increase: () => set(state => ({ count: state.count + 1 })),
 }));
 
+export const useMenuStore = create((set) => ({
+  isOpen: false,
+  openMenu: () => set({ isOpen: true }),
+  closeMenu: () => set({ isOpen: false }),
+  toggleMenu: () => set((state) => ({ isOpen: !state.isOpen })),
+}));
