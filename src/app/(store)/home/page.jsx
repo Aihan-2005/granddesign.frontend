@@ -6,6 +6,8 @@ import VideoPlayerHome from "@/components/home/videoHome";
 import WeblogHome from "@/components/home/weblog";
 import NewProjectsHome from "@/components/home/newProjects";
 import Team from "@/components/home/team";
+import VR360  from "@/components/home/VR";
+
 export default function HomePage(){
     return (
         <>
@@ -16,12 +18,14 @@ export default function HomePage(){
 <SliderProjects />
 
 </div>
-<div>
-    <Team/>
-</div>
 <div className="px-[150px]">
     <VideoPlayerHome />
 </div>
+<div>
+    <Team/>
+</div>
+<VR360/>
+
 <div className="px-[50px]">
     <WeblogHome/>
 </div>
