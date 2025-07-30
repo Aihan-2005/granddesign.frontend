@@ -29,7 +29,7 @@ export default function VideoPlayerHome() {
   ];
 
   return (
-    <div className="relative ml-[-120] sm:ml-[-10] w-[400px] h-[500px] md:h-[600px] md:w-full  rounded-xl flex justify-center items-center overflow-hidden bg-black">
+    <div className="relative ml-[-100] sm:ml-[-10] w-[285px] sm:w-[400px] h-[500px] md:h-[600px] md:w-full  rounded-xl flex justify-center items-center overflow-hidden bg-black">
       {/* ویدیو */}
       <video
         onClick={() => {
