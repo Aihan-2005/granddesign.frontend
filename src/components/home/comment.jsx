@@ -50,7 +50,7 @@ return () => clearInterval(interval);
 
   return (
     <div>
-        <h1 className='text-white text-center text-3xl font-bold  mt-40 ' >تیم ما </h1>
+        <h1 className='text-white text-center text-3xl font-bold  mt-40 ' >نظرات دیگران درباره ما  </h1>
     <div onClick={handleCliick} className='cursor-pointer w-full max-w-[90%] sm:max-w-[500px] md:max-w-[700px]
     mx-auto relative 
     bg-gradient-to-r from-[#6d6d6d]  via-[#4f4f4f] to-[#212121b3]  p-6 rounded-lg shadow-lg shadow-[#2a2a2a] hover:shadow-xl transition-all  hover:shadow-[#5d5d5d]
