@@ -17,7 +17,7 @@ export default function WeblogHome() {
   ];
 
   return (
-    <div className="w-full flex flex-col py-[40px] text-white  " dir="rtl">
+    <div className="w-full flex flex-col py-[40px] text-white  " dir="rtl" id="blog">
       {/* title */}
       <div className="w-full py-2 flex flex-col sm:flex-row justify-between items-start
        sm:items-center gap-4 px-4">

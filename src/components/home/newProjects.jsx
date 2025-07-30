@@ -50,7 +50,7 @@ export default function NewProjectsHome() {
   ];
 
   return (
-    <div className="w-full  text-white my-8 " dir="rtl">
+    <div className="w-full  text-white my-8 " dir="rtl"   id="about">
       <div className="my-6 text-center">
         <p className="text-3xl font-bold text-white">خدمات ما</p>
       </div>

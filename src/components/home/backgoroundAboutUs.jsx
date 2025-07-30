@@ -1,7 +1,7 @@
 export default function BackgroundeAboutUs(){
     return (
         <>
-<div className="w-full  h-auto my-5 relative flex flex-col md:flex-row justify-center items-end  " dir="rtl">
+<div    className="w-full  h-auto my-5 relative flex flex-col md:flex-row justify-center items-end  " dir="rtl">
 
       <img
     src="images/aboutimage.png"

@@ -7,14 +7,14 @@ export default function Navbar() {
   const { isOpen, openMenu, closeMenu } = useMenuStore();
 
   const navItems = [
-    { title: "blog", textTitle: "وبلاگ", href: "/blog" },
-    { title: "portfolio", textTitle: "انیمیشن", href: "/portfolio" },
+    { title: "blog", textTitle: "وبلاگ", href: "#blog" },
+    { title: "portfolio", textTitle: "انیمیشن", href: "#portfolio" },
     {
       title: "services",
       textTitle: "تالی",
       href: "https://momento360.com/e/uc/915652cee28649f7bbc15f57e53f27f4?utm_campaign=embed&utm_source=other&size=large&display-plan=true",
     },
-    { title: "about", textTitle: "خدمات ما", href: "/about" },
+    { title: "about", textTitle: "خدمات ما", href: "#about" },
   ];
 
   return (
