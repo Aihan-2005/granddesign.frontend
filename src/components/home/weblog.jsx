@@ -14,6 +14,10 @@ export default function WeblogHome() {
       definition: "مشاهده مکان های طراحی شده با ما",
       image: "3",
     },
+    {
+      definition: "مشاهده مکان های طراحی شده با ما",
+      image: "3",
+    },
   ];
 
   return (
@@ -32,7 +36,7 @@ export default function WeblogHome() {
       </div>
 
       <div className="w-[100%] grid grid-cols-1
-      sm:grid-cols-2 lg:grid-cols-3  justify-between items-center gap-6 px-4 mt-4 ">
+      sm:grid-cols-2 lg:grid-cols-4  justify-between items-center gap-6 px-4 mt-4 ">
         {Weblogs.map((item, index) => (
           <div key={index} className="w-full flex flex-col  items-center">
             <Image
