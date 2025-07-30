@@ -25,10 +25,10 @@ export default function WeblogHome() {
           <p className="text-white text-base sm:text-3xl ">وبلاگ</p>
           <p className="text-white text-2xl sm:text-3xl font-bold">وبلاگ و دید ما</p>
         </div>
-        <button className="text-white bg-green-500 rounded-lg hover:scale-110 duration-300 cursor-pointer h-11 px-4
+        {/* <button className="text-white bg-green-500 rounded-lg hover:scale-110 duration-300 cursor-pointer h-11 px-4
         text-sm sm:text-base">
           جدیدترین اخبار درموردما
-        </button>
+        </button> */}
       </div>
 
       <div className="w-[100%] grid grid-cols-1
