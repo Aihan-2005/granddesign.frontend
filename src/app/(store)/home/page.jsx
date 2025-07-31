@@ -8,27 +8,32 @@ import NewProjectsHome from "@/components/home/newProjects";
 import Team from "@/components/home/comment";
 import VR360  from "@/components/home/VR";
 import TeamSection from "@/components/home/teamsection";
+
+
+
 export default function HomePage(){
     return (
         <>
-<BackgroundImage/>
-<div className="px-[50px]">
-<BackgroundeAboutUs/>
-<NewProjectsHome/>
-<SliderProjects />
-<TeamSection/>
-</div>
-<div className="px-[150px]">
-    <VideoPlayerHome />
-</div>
-<div>
-    <Team/>
-</div>
-<VR360/>
+            <BackgroundImage/>
 
-<div className="px-[50px]">
-    <WeblogHome/>
-</div>
-         </>
+            <div className="px-[50px]">
+                <BackgroundeAboutUs/>
+                <TeamSection/>
+                <NewProjectsHome/>
+                <SliderProjects />
+            </div>
+
+            <div className="px-[150px]">
+                <VideoPlayerHome />
+            </div>
+
+            <Team/> 
+            <VR360/>
+
+            <div className="px-[50px]">
+                <WeblogHome/>
+            </div>
+
+        </>
     )
 }
