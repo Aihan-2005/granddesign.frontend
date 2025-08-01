@@ -5,9 +5,15 @@ import { create } from "zustand";
 
 
 
-export const  useTestStore = create((set) => ({
-  count: 123466,
-  increase: () => set(state => ({ count: state.count + 1 })),
+export const  useLoginStore = create((set) => ({
+  loginAndRegister: "login",
+  informationUser : {},
+  setloginAndRegister: (state) => set(({ loginAndRegister: state })),
+setInformationUser: (state) => set((prev) => ({
+    ...prev,
+    informationUser: { ...prev.informationUser, ...state },
+  })),
+setResetInformationUser: (state) => set((prev) => ({informationUser: {}})),
 }));
 
 export const useMenuStore = create((set) => ({

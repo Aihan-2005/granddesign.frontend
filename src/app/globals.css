@@ -22,9 +22,51 @@
 
 
 
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: inherit;
+    border-radius: 25px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(130, 130, 130);
+    border-radius: 25px;
+}
+
+.changeScroll::-webkit-scrollbar {
+    height:  7px;
+}
+
+.changeScroll::-webkit-scrollbar-track {
+    background-color: inherit;
+    border-radius: 25px;
+}
+
+.changeScroll::-webkit-scrollbar-thumb {
+    background-color: rgb(130, 130, 130);
+    border-radius: 25px;
+}
+
 
 body {
 background-color: rgba(49, 49, 49, 0.901);
 width: 100%;
 height: 100%;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #0f172a00 inset !important;
+    box-shadow: 0 0 0px 1000px #0f172a00 inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #ffffff !important;
+    border-color: #94a3b800 !important;
+    transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
+    appearance: none;
 }
