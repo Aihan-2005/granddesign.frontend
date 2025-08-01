@@ -1,81 +1,111 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function NewProjectsHome() {
-  const data = [
-    {
-      title: "طراحی واحد های مسکونی",
-      text: "متفاوت ترین ایده ها با ما ممکن میشود",
-      icon: "1",
-    },
-    {
-      title: "طراحی واحد های مسکونی",
-      text: "متفاوت ترین ایده ها با ما ممکن میشود",
-      icon: "2",
-    },
-    {
-      title: "طراحی واحد های مسکونی",
-      text: "متفاوت ترین ایده ها با ما ممکن میشود",
-      icon: "3",
-    },
-    {
-      title: "طراحی واحد های مسکونی",
-      text: "متفاوت ترین ایده ها با ما ممکن میشود",
-      icon: "4",
-    },
-    {
-      title: "طراحی واحد های مسکونی",
-      text: "متفاوت ترین ایده ها با ما ممکن میشود",
-      icon: "5",
-    },
-    {
-      title: "طراحی واحد های مسکونی",
-      text: "متفاوت ترین ایده ها با ما ممکن میشود",
-      icon: "6",
-    },
-    {
-      title: "طراحی واحد های مسکونی",
-      text: "متفاوت ترین ایده ها با ما ممکن میشود",
-      icon: "7",
-    },
-    {
-      title: "طراحی واحد های مسکونی",
-      text: "متفاوت ترین ایده ها با ما ممکن میشود",
-      icon: "8",
-    },
-    {
-      title: "طراحی واحد های مسکونی",
-      text: "متفاوت ترین ایده ها با ما ممکن میشود",
-      icon: "9",
-    },
-  ];
+const services = [
+  {
+    title: "طراحی واحد های مسکونی",
+    text: "متفاوت ترین ایده ها با ما ممکن میشود",
+    icon: "1",
+  },
+  {
+    title: "طراحی واحد های اداری",
+    text: "ترکیبی از عملکرد و زیبایی",
+    icon: "2",
+  },
+  {
+    title: "طراحی دکوراسیون داخلی",
+    text: "سبک شما، امضای ما",
+    icon: "3",
+  },
+  {
+    title: "نوسازی و بازسازی",
+    text: "حیات دوباره به فضاهای قدیمی",
+    icon: "4",
+  },
+  {
+    title: "مدیریت پروژه",
+    text: "برنامه‌ریزی حرفه‌ای تا اجرا",
+    icon: "5",
+  },
+];
+
+export default function ServicesSection() {
+ const sliderRef = useRef(null);
+
+  const scroll = (dir) => {
+  const scrollAmount = dir === "left" ? -400 : 400;
+  sliderRef.current?.scrollBy({ left: scrollAmount, behavior: "smooth" });
+};
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (sliderRef.current) {
+        sliderRef.current.scrollBy({ left: 400, behavior: "smooth" });
+      }
+    }, 4000); // هر 4 ثانیه اسکرول کنه
+
+    return () => clearInterval(interval); // جلوگیری از memory leak
+  }, []);
 
   return (
-    <div className="w-full  text-white my-8 " dir="rtl"   id="about">
-      <div className="my-6 text-center">
-        <p className="text-3xl font-bold text-white">خدمات ما</p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className="flex gap-3 cursor-pointer items-center justify-between bg-[#8c8c8c74] rounded-2xl p-6 mx-4 my-3 hover:bg-[#2a2a2a] hover:shadow-lg transition-all duration-300  border-2 "
-          >
-               <Image
-              src={`/images/newprojects/se-icon${item.icon}.png`}
-              alt={item.title}
-              width={70}
-              height={50}
-              className="object-contain"
+    <section className="relative px-[50px] py-28 bg-[#2d2d2d]" id="services">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-center mb-12"
+      >
+        <h2 className="text-4xl text-green-500 font-bold mb-4">خدمات ما</h2>
+        <p className="text-gray-300 text-lg">
+          طیف وسیعی از خدمات معماری و طراحی با بهترین کیفیت و خلاقیت
+        </p>
+      </motion.div>
 
-            />   
-              <div className="flex flex-col gap-2">
-              <p className="text-white text-sm md:text-lg font-semibold">{item.title}</p>
-              <p className="text-white text-sm md:text-base opacity-80">{item.text}</p>
-            </div>
-    
-          </div>
-        ))}
+      {/* دکمه‌های اسکرول */}
+      <button
+        onClick={() => scroll("left")}
+        className="flex absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black text-white p-3 rounded-full z-10"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={() => scroll("right")}
+        className="flex absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black text-white p-3 rounded-full z-10"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      {/* بخش اسکرول‌پذیر */}
+      <div
+  ref={sliderRef}
+  className="overflow-x-auto scroll-smooth no-scrollbar"
+>
+        <div className="flex gap-6 w-max">
+          {services.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="min-w-[300px] sm:min-w-[360px] lg:min-w-[400px] bg-[#444] hover:bg-[#1f1f1f] text-white p-6 rounded-2xl shadow-lg flex flex-col items-center gap-4 transition-all duration-300"
+            >
+              <Image
+                src={`/images/newprojects/se-icon${item.icon}.png`}
+                alt={item.title}
+                width={80}
+                height={80}
+                className="object-contain"
+              />
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p className="text-sm text-gray-300 text-center">{item.text}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

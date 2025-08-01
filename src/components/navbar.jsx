@@ -11,12 +11,8 @@ export default function Navbar() {
     { title: "portfolio", textTitle: "انیمیشن", href: "#portfolio" },
     {
       title: "services",
-<<<<<<< HEAD
       textTitle: "VR360",
-=======
-      textTitle: "تالی",
->>>>>>> c73c4361da1b569da52f27b51b0ecad4ebc86203
-      href: "https://momento360.com/e/uc/915652cee28649f7bbc15f57e53f27f4?utm_campaign=embed&utm_source=other&size=large&display-plan=true",
+      href: "#vr-home",
     },
     { title: "about", textTitle: "خدمات ما", href: "#about" },
   ];
