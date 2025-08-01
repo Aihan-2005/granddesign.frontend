@@ -1,4 +1,7 @@
 export default function BackgroundeAboutUs(){
+
+
+
     return (
         <>
 <div    className="w-full  h-auto my-5 relative flex flex-col md:flex-row justify-center items-end  " dir="rtl">
@@ -22,9 +25,6 @@ export default function BackgroundeAboutUs(){
       <p className="text-white  text-base sm:text-lg md:text-xl w-[100%]  pl-[19%] py-3 px-2">
        حس ها جدید و دل انگیز با کمک خانه های مدرن و ایده های ما برای هرچه زیبا تر کردن زندگی شما ، مارا انتخاب کنید همچون یک دوست
       </p>
-      {/* <button className="w-[150px] cursor-pointer my-2  text-sm py-3 bg-green-600 text-white rounded-lg transition duration-200 hover:scale-110">
-   بیشتر از ما بدانید
-      </button> */}
     </div>
   </div>
 
