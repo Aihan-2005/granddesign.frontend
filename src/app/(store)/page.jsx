@@ -1,11 +1,10 @@
 "use client"
 
-import { useTestStore } from "@/zustand/store";
-// import { useTestStore } from "../../zustand/store";
-import HomePage from "./home/page";
+import HomePage from "./home/page"
+
+
 
 export default function Page(){
-    const {count} = useTestStore()
     return (
         <>
          <div><HomePage/></div>

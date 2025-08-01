@@ -6,16 +6,17 @@ import { Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function SliderProjects() {
   const Images = [
-    { image: "01", text: "پروژه کاری 1" },
-    { image: "02", text: "پروژه کاری 2" },
-    { image: "03", text: "پروژه کاری 3" },
-    { image: "04", text: "پروژه کاری 4" },
-    { image: "01", text: "پروژه کاری 1" },
-    { image: "02", text: "پروژه کاری 2" },
-    { image: "03", text: "پروژه کاری 3" },
+    { image: "01", text: "پروژه کاری 1"  , id:"1"  },
+    { image: "02", text: "پروژه کاری 2"  , id:"2"  },
+    { image: "03", text: "پروژه کاری 3"  , id:"3"  },
+    { image: "04", text: "پروژه کاری 4"  , id:"4"  },
+    { image: "01", text: "پروژه کاری 1"  , id:"5"  },
+    { image: "02", text: "پروژه کاری 2"  , id:"6"  },
+    { image: "03", text: "پروژه کاری 3"  , id:"7"  },
   ];
 
   return (
@@ -55,7 +56,8 @@ export default function SliderProjects() {
       >
         {Images.map((image, index) => (
 <SwiperSlide key={index}>
-  <div className="w-full h-full relative group overflow-hidden rounded-lg shadow-md">
+  <Link  href={`/projects/${image.id}`}
+   className="w-full h-full relative group overflow-hidden rounded-lg shadow-md">
     <Image
       src={`/images/projectsImage/protfolio-img${image.image}.png`}
       width={400}
@@ -66,7 +68,7 @@ export default function SliderProjects() {
     <div className="absolute top-0 left-0 w-full h-full bg-black/80 translate-y-full group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center text-white text-lg font-bold">
       {image.text}
     </div>
-  </div>
+  </Link>
 </SwiperSlide>
 
         ))}
