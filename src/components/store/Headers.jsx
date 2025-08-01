@@ -29,7 +29,7 @@ export default function Header() {
         <nav className="hidden md:flex gap-6 text-sm md:text-lg font-medium text-emerald-600">
           <Link className="hover:text-black transition" href="/">خانه</Link>
           <Link className="hover:text-black transition" href="/">چرا ما</Link>
-          <Link className="hover:text-black transition" href="/">فروشگاه</Link>
+          <Link className="hover:text-black transition" href="/store">فروشگاه</Link>
           <Link className="hover:text-black transition" href="/">وبلاگ</Link>
           <Link className="hover:text-black transition" href="/">ارتباط با ما</Link>
         </nav>

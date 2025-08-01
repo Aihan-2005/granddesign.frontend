@@ -9,6 +9,7 @@ import Footer from "@/components/store/Footer";
 
 
 
+
 export default function Page() {
   const { count } = useTestStore();
 
@@ -16,6 +17,7 @@ export default function Page() {
     <>
 
       <FirstPage />
+   
        <SpecialProducts />
        <Allproducts/>
        <Footer />
