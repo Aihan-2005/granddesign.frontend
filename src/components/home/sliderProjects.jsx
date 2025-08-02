@@ -20,7 +20,7 @@ export default function SliderProjects() {
   ];
 
   return (
-    <div className="py-5">
+    <div className="py-5 mt-30">
       <div className='w-[100%] py-2 flex  
        justify-between items-center gap-4' dir='rtl'>
    <div> <p className='text-[white] text-sm sm:text-3xl font-bold'>جدید ترین کار ها </p>
