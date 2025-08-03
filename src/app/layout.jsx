@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from './../components/store/Headers'; // ✅ مسیر درست
+import Header from './../components/store/Headers'; 
+import Search from './../components/store/modal/Search'; 
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,8 +23,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Header />       {/* ✅ هدر اینجا اضافه شد */}
+        <Header />      
         {children}
+        <Search/>
       </body>
     </html>
   );
