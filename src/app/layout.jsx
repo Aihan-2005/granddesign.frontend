@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from './../components/store/Headers'; 
 import Search from './../components/store/modal/Search'; 
+import LoginModal from './../components/store/modal/Login';
+import CartModal from './../components/store/modal/CartModal';
 
 
 const geistSans = Geist({
@@ -25,7 +27,9 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />      
         {children}
-        {/* <Search/> */}
+        <Search/>
+        <LoginModal />
+        <CartModal />
       </body>
     </html>
   );
