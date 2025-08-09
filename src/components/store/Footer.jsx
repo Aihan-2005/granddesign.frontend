@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram,FaWhatsapp,FaTelegram } from "react-icons/fa";
 
 
 
@@ -25,10 +25,23 @@ export default function Footer(){
           </div>
               <div className=" flex flex-col  justify-center items-center">
                 <h3 className="text-xl font-bold mb-4 text-emerald-800">ما را دنبال کنید</h3>
+
+                                <div className="flex flex-row gap-4">
                 <div className="flex space-x-5 rtl:space-x-reverse">
                   <Link href="https://instagram.com" target="_blank" className="hover:scale-110 transition">
                     <FaInstagram className="text-neutral-900 w-8 h-8"/>
                   </Link>
+                </div>
+                <div className="flex space-x-5 rtl:space-x-reverse">
+                  <Link href="#" target="_blank" className="hover:scale-110 transition">
+                    <FaWhatsapp className="text-neutral-900 w-8 h-8"/>
+                  </Link>
+                </div>
+                <div className="flex space-x-5 rtl:space-x-reverse">
+                  <Link href="#" target="_blank" className="hover:scale-110 transition">
+                    <FaTelegram className="text-neutral-900 w-8 h-8"/>
+                  </Link>
+                </div>
                 </div>
               </div>
               <div>
