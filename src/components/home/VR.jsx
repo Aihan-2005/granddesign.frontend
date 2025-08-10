@@ -47,7 +47,7 @@ export default function VR360() {
     }
   };
   return (
-    <section className=" relative  px-[50px] py-28 bg-gradient-to-l from-gray-700  to-gray-600 ">
+    <section className=" relative  px-[50px] py-28 bg-[#2d2d2d] ">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

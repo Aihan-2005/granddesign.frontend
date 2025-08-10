@@ -12,7 +12,7 @@ export default function Navbar() {
     {
       title: "services",
       textTitle: "VR360",
-      href: "https://momento360.com/e/uc/915652cee28649f7bbc15f57e53f27f4?utm_campaign=embed&utm_source=other&size=large&display-plan=true",
+      href: "#vr-home",
     },
     { title: "about", textTitle: "خدمات ما", href: "#about" },
   ];

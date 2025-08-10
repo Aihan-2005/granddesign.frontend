@@ -19,7 +19,10 @@ export default function HomePage(){
             <div className="px-[50px]">
                 <BackgroundeAboutUs/>
                 <TeamSection/>
-                <NewProjectsHome/>
+                <section id="about">
+                    <NewProjectsHome/>
+                </section>
+                
                 <SliderProjects />
             </div>
 
@@ -28,7 +31,10 @@ export default function HomePage(){
             </div>
 
             <Team/> 
-            <VR360/>
+            <section id="vr-home">
+                <VR360/>
+            </section>
+            
 
             <div className="px-[50px]">
                 <WeblogHome/>

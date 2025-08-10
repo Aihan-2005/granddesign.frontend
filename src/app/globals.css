@@ -17,6 +17,7 @@
 
 *{
   font-family:"Dana";
+   scroll-behavior: smooth;
 }
 
 
@@ -69,4 +70,11 @@ input:-webkit-autofill:active {
     border-color: #94a3b800 !important;
     transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
     appearance: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
