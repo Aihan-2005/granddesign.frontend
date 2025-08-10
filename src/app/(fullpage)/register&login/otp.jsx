@@ -1,7 +1,8 @@
 "use client"
 
-import { registerFunction } from "@/apis/registerandLogin";
+import { login, registerFunction } from "@/apis/registerandLogin";
 import { useLoginStore } from "@/zustand/store";
+import Cookies from "js-cookie";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -9,17 +10,38 @@ import { useState } from "react";
 export default function SendOtp() {
   const router = useRouter();
   const [information, setInformation] = useState();
-  const { setloginAndRegister, setInformationUser, informationUser } = useLoginStore();
+  const { setloginAndRegister, setInformationUser, informationUser  , loginAndRegister } = useLoginStore();
 
-  async function callRegister(obj) {
-    
-  await setInformationUser({otp:Number(information)});
-     
-    const res = await registerFunction({phoneNumber:informationUser.phoneNumber , otp:Number(information)});
-    if (res.success) {
-      router.push("/");
-    }
+async function callRegister(obj) {
+  await setInformationUser({ otp: Number(information) });
+
+  let payload = {
+    phoneNumber: informationUser.phoneNumber,
+    password: informationUser.password,
+    otpCode: Number(information),
+    lastname: informationUser.lastname,
+    name: informationUser.name, 
+  };
+
+  payload = Object.fromEntries(
+    Object.entries(payload).filter(([_, value]) => value !== undefined && value !== null)
+  );
+
+  console.log(payload);
+
+    let res  = {}
+   if (informationUser.lastname && informationUser.name){
+   res = await registerFunction(payload)
+   }
+   else{
+   res = await login(payload)
+   }
+  if (res?.success) {
+    Cookies.set("AccessToken", res.token, { expires: 1 });
+    router.push("/");
   }
+}
+
 
   return (
     <div className="h-full w-full flex flex-col justify-center items-center p-8 bg-gradient-to-br from-[#0b1e34] to-[#0e1c2f] text-white rounded-l-2xl relative overflow-hidden shadow-inner shadow-sky-900/20 direction-rtl">

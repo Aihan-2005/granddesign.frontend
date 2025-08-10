@@ -16,7 +16,7 @@ export async function validOtp(obj) {
 
 export async function registerFunction(obj) {
   console.log(obj)
-  const url = `http://localhost:8000/api/v1/auth/sign-up`;
+  const url = `http://localhost:8000/api/v1/auth/signup`;
   const res = await fetch(url, {
     method: "POST",
     headers: {
@@ -39,7 +39,7 @@ export async function registerFunction(obj) {
 
 
 export async function login(obj) {
-  const url = `${process.env.URL_APIS}/api/v1/auth/login`
+  const url = `http://localhost:8000/api/v1/auth/login`
   const res = await fetch(url, {
     method: "POST",
     headers: {
