@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 export default function SliderProjects() {
   const Images = [
-    { image: "01", text: "پروژه کاری 1"  , id:"1"  },
+    { image: "01", text: "پروژه کاری 1"   , id:"1"  },
     { image: "02", text: "پروژه کاری 2"  , id:"2"  },
     { image: "03", text: "پروژه کاری 3"  , id:"3"  },
     { image: "04", text: "پروژه کاری 4"  , id:"4"  },
@@ -20,7 +20,7 @@ export default function SliderProjects() {
   ];
 
   return (
-    <div className="py-5">
+    <div className="py-5 mt-30  ">
       <div className='w-[100%] py-2 flex  
        justify-between items-center gap-4' dir='rtl'>
    <div> <p className='text-[white] text-sm sm:text-3xl font-bold'>جدید ترین کار ها </p>
@@ -65,7 +65,7 @@ export default function SliderProjects() {
       alt="project"
       className="w-full h-full object-cover"
     />
-    <div className="absolute top-0 left-0 w-full h-full bg-black/80 translate-y-full group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center text-white text-lg font-bold">
+    <div className="absolute top-0 left-0 w-full h-full bg-black/80 translate-y-full group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center text-center text-white text-lg font-bold">
       {image.text}
     </div>
   </Link>
