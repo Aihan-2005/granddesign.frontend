@@ -21,16 +21,17 @@ export default function VideoPlayerHome() {
     threshold: 0.5,
   });
 
-  const Information = [
-    { title: "تعداد جوایز که ما برده‌ایم", Number: 1234 },
-    { title: "تعداد فروش محصولات ما", Number: 3245 },
-    { title: "تعداد افراد راضی از همکاری با ما", Number: 475 },
-    { title: "پروژه‌های تکمیل‌شده", Number: 20 },
-  ];
+  // const Information = [
+  //   { title: "تعداد جوایز که ما برده‌ایم", Number: 1234 },
+  //   { title: "تعداد فروش محصولات ما", Number: 3245 },
+  //   { title: "تعداد افراد راضی از همکاری با ما", Number: 475 },
+  //   { title: "پروژه‌های تکمیل‌شده", Number: 20 },
+  // ];
 
   return (
+    
     <div   id="portfolio" className="relative mt-40 ml-[-100] sm:ml-[-10] w-[285px] sm:w-[400px] h-[500px] md:h-[600px] md:w-full  rounded-xl flex justify-center items-center overflow-hidden bg-black">
-      {/* ویدیو */}
+      {/* ویدیو */} 
       <video
         onClick={() => {
           videoRef.current.pause();
@@ -61,7 +62,7 @@ export default function VideoPlayerHome() {
 
       {/* اطلاعات پایین/شمارنده */}
       
-      <div ref={ref} className={`${!isPlaying ? "opacity-100" : "opacity-0"}  absolute bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl
+      {/* <div ref={ref} className={`${!isPlaying ? "opacity-100" : "opacity-0"}  absolute bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl
        bg-white/10 backdrop-blur-xl rounded-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 text-white
         z-20 p-4 border border-white/20`}>
         {Information.map((item, index) => (
@@ -73,7 +74,7 @@ export default function VideoPlayerHome() {
             </p>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
