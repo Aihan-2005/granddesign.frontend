@@ -1,56 +1,97 @@
-"use client";
+'use client';
 
-import { useLoginStore } from "@/zustand/loginStore";
-import { X } from "lucide-react";
-import { useRef, useState } from "react";
+import {useLoginStore} from "@/zustand/loginStore";
+import {useAuthStore } from "@/zustand/useAuthStore";
+import {X} from 'lucide-react';
+import {useRef,useState } from 'react';
 
-export default function LoginModal() {
+
+export default function Login(){
   const modalRef = useRef();
 
-  const [isRegister, setIsRegister] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    password: "",
-    confirmPassword: "",
+  const API_BASE = "http://localhost:8000/api/auth";
+
+  const [isRegister,setIsRegister] = useState(false);
+  const [formData,setFormData] = useState({
+    firstName : '',
+    lastName : '',
+    phone : '',
+    password: '' ,
+    confirmPassword: '',
   });
 
-  const { isLoginOpen, closeLogin } = useLoginStore();
+  const {isLoginOpen,closeLogin} = useLoginStore();
+  const {login} = useAuthStore();
 
   if (!isLoginOpen) return null;
 
-  const handleBackdropClick = (e) => {
-    if (e.target === modalRef.current) {
+  const handleBackdropClick = (e)=>{
+    if (e.target === modalRef.current){
       closeLogin();
     }
   };
 
-  const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleChange = (e)=>{
+    setFormData((prev) => ({...prev,[e.target.name]:e.target.value}));
   };
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e)=>{
     e.preventDefault();
 
-    if (!formData.phone || !formData.password) {
-      alert("شماره تماس و رمز عبور الزامی است");
+    if (!formData.phone||!formData.password){
+      alert("شماره تماس و رمز عبور الزامی است.")
       return;
     }
 
-    if (isRegister) {
-      if (!formData.password !== formData.confirmPassword) {
-        alert("رمز عبور و تکرار آن باید یکسان باشند");
-        return;
-      }
-      alert("ثبت نام موفق");
-    } else {
-      alert("ورود ناموفق");
-    }
+    try{
+      if(isRegister){
+        if (formData.password !== formData.confirmPassword){
+          alert("رمز عبور و تکرار ان باید یکسان باشد.");
+          return;
+        }
 
-    closeLogin();
+
+
+        const res = await fetch(`${API_BASE}/signup`,{
+          method : 'POST',
+          headers : {"Content-Type":'application/json'},
+          body : JSON.stringify(formData),
+        });
+
+
+        // const res = await fetch("/api/auth/signup",{
+        //   method:"POST",
+        //   headers:{"Content-Type":'application/json'},
+        //   body:JSON.stringify(formData),
+        // });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.message || "خطا در ثبت نام");
+        alert('ثبت نام موفقیت امیز بود')
+      }else{
+        const res = await fetch(`${API_BASE}/login`,{
+          method:"POST",
+          headers:{'Content-Type':"application/json"},
+          body:JSON.stringify({
+            phone:formData.phone,
+            password:formData.password,
+          }),
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.message || "خطا در ورود");
+        login(data.user,data.accessToken);
+
+        alert('ورود موفق');
+      }
+      closeLogin();
+    }catch(err){
+      alert(err.message);
+    }
   };
- return (
+
+return (
     <div
       ref={modalRef}
       onClick={handleBackdropClick}
@@ -77,7 +118,7 @@ export default function LoginModal() {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                placeholder="نام" 
+                placeholder="نام"
                 className="w-full text-right p-3 border rounded-lg outline-none focus:ring-2 focus:ring-emerald-400 transition"
                 required={isRegister}
               />
@@ -109,7 +150,7 @@ export default function LoginModal() {
             value={formData.password}
             onChange={handleChange}
             placeholder="رمز عبور"
-            className="w-full p-3 border  text-right rounded-lg outline-none focus:ring-2 focus:ring-emerald-400 transition"
+            className="w-full p-3 border text-right rounded-lg outline-none focus:ring-2 focus:ring-emerald-400 transition"
             required
           />
 
@@ -120,7 +161,7 @@ export default function LoginModal() {
               value={formData.confirmPassword}
               onChange={handleChange}
               placeholder="تکرار رمز عبور"
-              className="w-full p-3 border text-right  rounded-lg outline-none focus:ring-2 focus:ring-emerald-400 transition"
+              className="w-full p-3 border text-right rounded-lg outline-none focus:ring-2 focus:ring-emerald-400 transition"
               required
             />
           )}
