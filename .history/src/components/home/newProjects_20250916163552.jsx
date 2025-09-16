@@ -46,11 +46,11 @@ export default function NewProjectsHome() {
                 fill
                 className="object-contain group-hover:scale-110 transition-all duration-700"
               />
-              
+              {/* لایه تیره هنگام هاور */}
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-md"></div>
             </div>
 
-            
+            {/* متن‌ها */}
             <div className="flex flex-col gap-2">
               <p className="text-white text-sm md:text-lg font-semibold">{item.title}</p>
               <p className="text-white text-sm md:text-base opacity-80">{item.text}</p>

@@ -17,7 +17,7 @@ export default function NewProjectsHome() {
   ];
 
   return (
-    <div className="w-full text-white my-8" dir="rtl">
+    <div className="w-full text-white my-5" dir="rtl">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export default function NewProjectsHome() {
             viewport={{ once: true }}
             className="relative group flex gap-4 items-center bg-[#8c8c8c74] rounded-2xl p-6 hover:bg-[#2a2a2a] hover:shadow-lg border-2 transition-all duration-300"
           >
-           
+            {/* تصویر با زوم روی هاور */}
             <div className="relative w-[70px] h-[70px] overflow-hidden rounded-md">
               <Image
                 src={`/images/newprojects/se-icon${item.icon}.png`}
@@ -46,11 +46,11 @@ export default function NewProjectsHome() {
                 fill
                 className="object-contain group-hover:scale-110 transition-all duration-700"
               />
-              
+              {/* لایه تیره هنگام هاور */}
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-md"></div>
             </div>
 
-            
+            {/* متن‌ها */}
             <div className="flex flex-col gap-2">
               <p className="text-white text-sm md:text-lg font-semibold">{item.title}</p>
               <p className="text-white text-sm md:text-base opacity-80">{item.text}</p>
