@@ -107,12 +107,14 @@ export default function TeamSection() {
     { src: "/images/teams/client2.jpg" },
     { src: "/images/teams/client3.jpg" },
     { src: "/images/teams/client4.jpg" },
+    { src: "/images/teams/client4.jpg" },
   ]
 
   const cardDescription = [
     "frontend developer: دارای چهار سال سابقه کاری در معتبر ترین شرکت ها",
     "backend developer: دارای چهار سال سابقه کاری در معتبر ترین شرکت ها",
     "UI designer: دارای چهار سال سابقه کاری در معتبر ترین شرکت ها",
+    "backend developer: دارای چهار سال سابقه کاری در معتبر ترین شرکت ها",
     "backend developer: دارای چهار سال سابقه کاری در معتبر ترین شرکت ها",
   ]
 
@@ -121,10 +123,11 @@ export default function TeamSection() {
     "محمد سهیلی ",
     "امیر عباسی ",
     "حسین پور مخبر ",
+    "حسین پور مخبر ",
   ]
 
   return (
-    <section className="py-16 pb-[150px] rounded-2xl mb-17">
+    <section className="py-16 pb-[150px] rounded-2xl mb-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-extrabold text-green-500 text-center">
           تیم ما
