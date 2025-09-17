@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 
 export default function NewProjectsHome() {
   const data = [
-    { title: "طراحی واحد های مسکونی", text: "متفاوت ترین ایده ها با ما ممکن میشود", icon: "1" },
-    { title: "طراحی واحد های مسکونی", text: "متفاوت ترین ایده ها با ما ممکن میشود", icon: "2" },
-    { title: "طراحی واحد های مسکونی", text: "متفاوت ترین ایده ها با ما ممکن میشود", icon: "3" },
-    { title: "طراحی واحد های مسکونی", text: "متفاوت ترین ایده ها با ما ممکن میشود", icon: "4" },
-    { title: "طراحی واحد های مسکونی", text: "متفاوت ترین ایده ها با ما ممکن میشود", icon: "5" },
-    { title: "طراحی واحد های مسکونی", text: "متفاوت ترین ایده ها با ما ممکن میشود", icon: "6" },
-    { title: "طراحی واحد های مسکونی", text: "متفاوت ترین ایده ها با ما ممکن میشود", icon: "7" },
-    { title: "طراحی واحد های مسکونی", text: "متفاوت ترین ایده ها با ما ممکن میشود", icon: "8" },
-    { title: "طراحی واحد های مسکونی", text: "متفاوت ترین ایده ها با ما ممکن میشود", icon: "9" },
+    { text: 'همراه با هوشمصنوعیی نمای خانه', icon: "1" },
+    { text: 'همراه با هوشمصنوعیی نمای خانه', icon: "2" },
+    { text: 'همراه با هوشمصنوعیی نمای خانه', icon: "3" },
+    { text: 'همراه با هوشمصنوعیی نمای خانه', icon: "4" },
+    { text: 'همراه با هوشمصنوعیی نمای خانه', icon: "5" },
+    { text: 'همراه با هوشمصنوعیی نمای خانه', icon: "6" },
+    { text: 'همراه با هوشمصنوعیی نمای خانه', icon: "7" },
+    { text: 'همراه با هوشمصنوعیی نمای خانه', icon: "8" },
+    { text: 'همراه با هوشمصنوعیی نمای خانه', icon: "9" },
   ];
 
   return (
@@ -23,9 +23,9 @@ export default function NewProjectsHome() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="my-6 text-center"
+        className="my-6 text-center "
       >
-        <p className="text-3xl font-bold text-white">خدمات ما</p>
+        <p className="text-3xl font-bold text-green-300">خدمات ما</p>
       </motion.div>
 
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 px-4">
@@ -36,7 +36,7 @@ export default function NewProjectsHome() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1, duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative group flex gap-4 items-center bg-[#8c8c8c74] rounded-2xl p-6 hover:bg-[#2a2a2a] hover:shadow-lg border-2 transition-all duration-300"
+            className="relative group flex gap-6 items-center bg-[#8c8c8c74] rounded-2xl p-6 hover:bg-[#2a2a2a] hover:shadow-lg border-2 transition-all duration-300"
           >
            
             <div className="relative w-[70px] h-[70px] overflow-hidden rounded-md">
