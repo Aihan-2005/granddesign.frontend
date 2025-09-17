@@ -124,7 +124,7 @@ export default function TeamSection() {
   ]
 
   return (
-    <section className="py-16 pb-[150px] rounded-2xl mb-17">
+    <section className="py-16 pb-[150px] rounded-2xl mb-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-extrabold text-green-500 text-center">
           تیم ما
@@ -139,7 +139,7 @@ export default function TeamSection() {
             className="card cursor-pointer h-[400px] bg-cover bg-center rounded-[20px] border border-[#055b12] flex-shrink-0 overflow-hidden"
             animate={{
               flexGrow: index === openCard ? 2 : 1,
-              flexBasis: "45%",
+              flexBasis: "45%", // موبایل → دو تا دو تا
             }}
             transition={{ duration: 0.5 }}
             onClick={() => handleCardClick(index)}
