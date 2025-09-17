@@ -1,80 +1,121 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
 
-export default function VideoPlayerHome() {
+export default function VideoCarousel() {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
 
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
+  const videos = [
+    { id: 1, src: "/videos/1.mp4", title: "انمیشن 1" },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const handlePlayPause = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isPlaying) {
+      video.pause();
+      setIsPlaying(false);
+    } else {
+      video.play();
       setIsPlaying(true);
     }
   };
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % videos.length);
+    setIsPlaying(false);
+    setProgress(0);
+  };
 
-  // const Information = [
-  //   { title: "تعداد جوایز که ما برده‌ایم", Number: 1234 },
-  //   { title: "تعداد فروش محصولات ما", Number: 3245 },
-  //   { title: "تعداد افراد راضی از همکاری با ما", Number: 475 },
-  //   { title: "پروژه‌های تکمیل‌شده", Number: 20 },
-  // ];
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
+    setIsPlaying(false);
+    setProgress(0);
+  };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const updateProgress = () => {
+      if (video.duration) setProgress((video.currentTime / video.duration) * 100);
+    };
+
+    video.addEventListener("timeupdate", updateProgress);
+    video.addEventListener("ended", () => setIsPlaying(false));
+
+    return () => {
+      video.removeEventListener("timeupdate", updateProgress);
+      video.removeEventListener("ended", () => setIsPlaying(false));
+    };
+  }, [currentIndex]);
 
   return (
-    
-    <div   id="portfolio" className="relative mt-40 ml-[-100] sm:ml-[-10] w-[285px] sm:w-[400px] h-[500px] md:h-[600px] md:w-full  rounded-xl flex justify-center items-center overflow-hidden bg-black">
-      {/* ویدیو */} 
-      <video
-        onClick={() => {
-          videoRef.current.pause();
-          setIsPlaying(false);
-        }}
-        ref={videoRef}
-        className="absolute w-full h-full object-cover"
-        onEnded={() => setIsPlaying(false)}
-        playsInline
-      >
-        <source src="/videos/videoHome.mp4" type="video/mp4" />
-        مرورگر شما از ویدیو پشتیبانی نمی‌کند.
-      </video>
+    <div className="relative w-full mt-20 px-1 sm:px-0 flex flex-col items-center gap-4">
+      <div className="relative w-full rounded-xl overflow-hidden bg-black">
+        <video
+          ref={videoRef}
+          src={videos[currentIndex].src}
+          className="w-full h-auto max-h-[50vh] min-h-[200px] object-cover rounded-xl"
+          muted={isMuted}
+          playsInline
+          onClick={handlePlayPause}
+        />
 
-      {/* دکمه پلی */}
-      {!isPlaying && (
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-10">
+        {!isPlaying && (
+          <div className="absolute inset-0 bg-black/40 flex justify-center items-center z-10">
+            <button
+              onClick={handlePlayPause}
+              className="bg-white/30 hover:bg-white/50 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center shadow-lg"
+            >
+              <Image src="/icons/play.svg" alt="Play" width={30} height={30} />
+            </button>
+          </div>
+        )}
+
+        <div className="absolute bottom-1 left-0 w-full h-1 bg-gray-700">
+          <div className="h-full bg-green-500 transition-all" style={{ width: `${progress}%` }}></div>
+        </div>
+
+        <button
+          onClick={handlePrev}
+          className="absolute left-[5px] sm:left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-1 sm:p-2 rounded-full z-20"
+        >
+          <Image src="/icons/arrow-left.svg" alt="Prev" width={20} height={20} />
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute right-[5px] sm:right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-1 sm:p-2 rounded-full z-20"
+        >
+          <Image src="/icons/arrow-right.svg" alt="Next" width={20} height={20} />
+        </button>
+
+        <div className="absolute bottom-2 right-2 flex gap-1 sm:gap-2 z-20">
           <button
-            onClick={handlePlay}
-            className="bg-white/30 hover:bg-white/50 cursor-pointer transition-all w-[70px] 
-            h-[70px] sm:w-[90px] sm:h-[90px] md:w-[100px] md:h-[100px] rounded-full flex justify-center items-center shadow-lg backdrop-blur-md"
+            onClick={() => setIsMuted(!isMuted)}
+            className="bg-white/20 hover:bg-white/40 p-1 sm:p-2 rounded-full text-xs sm:text-sm"
           >
-            <Image src="/icons/play.svg" alt="Play Icon" width={35} height={35}
-              className="sm:w-[40px] sm:h-[40px] md:w-[50px] md:h-[50px] " />
+            {isMuted ? "🔇" : "🔊"}
+          </button>
+          <button
+            onClick={() => videoRef.current?.requestFullscreen()}
+            className="bg-white/20 hover:bg-white/40 p-1 sm:p-2 rounded-full text-xs sm:text-sm"
+          >
+            ⛶
           </button>
         </div>
-      )}
 
-      {/* اطلاعات پایین/شمارنده */}
-      
-      {/* <div ref={ref} className={`${!isPlaying ? "opacity-100" : "opacity-0"}  absolute bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl
-       bg-white/10 backdrop-blur-xl rounded-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 text-white
-        z-20 p-4 border border-white/20`}>
-        {Information.map((item, index) => (
-          <div key={index} className="text-center flex flex-col items-center gap-1" dir="rtl">
-            <p className="text-xs sm:text-sm md:text-base text-[#eaeaea]">{item.title}</p>
-            <p className="text-xs sm:text-sm md:text-base font-bold">
-             {inView ? <CountUp end={item.Number} duration={2} /> : 0}
-
-            </p>
-          </div>
-        ))}
-      </div> */}
+        <div className="absolute top-1 left-1 sm:top-2 sm:left-2 text-white font-bold bg-black/40 px-1 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm truncate max-w-[95%]">
+          {videos[currentIndex].title}
+        </div>
+      </div>
     </div>
   );
 }
