@@ -17,10 +17,6 @@ export default function WeblogHome() {
       definition: "داخلی و دکوراسیون",
       image: "3",
     },
-    { id:4,
-      definition: "اجرایی",
-      image: "3",
-    },
   ];
 
     return(
@@ -31,7 +27,7 @@ export default function WeblogHome() {
             <p className="text-black text-xl sm:text-3xl font-bold w-full sm:w-auto">با ما بیشتر اشنا شوید</p>
           </div>
         </div>
-        <div className="w-[100%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 mt-4">
+        <div className="w-[100%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 mt-4">
           {Weblogs.map((item)=>(
             <Link key={item.id} href={`/resume/${item.id}`}>
               <div className="w-full flex flex-col items-center cursor-pointer">

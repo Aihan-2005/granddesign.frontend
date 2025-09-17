@@ -11,7 +11,7 @@ export default function Resume1(){
     {id:1,src: "/nama/chalak-pirmohamadi/a.jpg", alt: "نما و محوطه 1" },
     { id: 2, src: "/images/weblogs/2.jpg", alt: "نما و محوطه 2" },
     { id: 2, src: "/images/weblogs/2.jpg", alt: "نما و محوطه 2" },
-    //محل قرار گیری عکس ها برای فولدر نما تمام عکس های در فولدر نما باید قرار داده شود 
+    //محل قرار گیری عکس ها برای فولدر نما تمام عکس های در فولدر داخلی باید قرار داده شود 
   ];
 
   const [showAll,setShowAll] = useState(false);
