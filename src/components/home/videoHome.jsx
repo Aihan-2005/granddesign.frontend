@@ -2,12 +2,16 @@
 
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+
 
 export default function VideoCarousel() {
   const videoRef = useRef(null);
 
   const videos = [
-    { id: 1, src: "/videos/1.mp4", title: "انمیشن 1" },
+    { id: 1, src: "/videos/1.mp4", title: "انیمیشن 1" },
+    { id: 2, src: "/videos/1.mp4", title: "انیمیشن 2" },
+
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,12 +62,19 @@ export default function VideoCarousel() {
   }, [currentIndex]);
 
   return (
-    <div className="relative w-full mt-20 px-1 sm:px-0 flex flex-col items-center gap-4">
-      <div className="relative w-full rounded-xl overflow-hidden bg-black">
+    <div className="relative w-full mt-20 flex flex-col items-center gap-4">
+      <div className="
+        relative 
+        w-screen sm:w-full   /* فول‌عرض توی موبایل، عادی توی دسکتاپ */
+        h-[65vh] sm:h-auto   /* ارتفاع داینامیک موبایل، aspect در دسکتاپ */
+        sm:aspect-video
+        bg-black rounded-none sm:rounded-xl 
+        overflow-hidden
+      ">
         <video
           ref={videoRef}
           src={videos[currentIndex].src}
-          className="w-full h-auto max-h-[50vh] min-h-[200px] object-cover rounded-xl"
+          className="absolute inset-0 w-full h-full object-cover"
           muted={isMuted}
           playsInline
           onClick={handlePlayPause}
@@ -81,41 +92,49 @@ export default function VideoCarousel() {
         )}
 
         <div className="absolute bottom-1 left-0 w-full h-1 bg-gray-700">
-          <div className="h-full bg-green-500 transition-all" style={{ width: `${progress}%` }}></div>
+          <div
+            className="h-full bg-green-500 transition-all"
+            style={{ width: `${progress}%` }}
+          ></div>
         </div>
 
         <button
           onClick={handlePrev}
-          className="absolute left-[5px] sm:left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-1 sm:p-2 rounded-full z-20"
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-2 rounded-full z-20"
         >
-          <Image src="/icons/arrow-left.svg" alt="Prev" width={20} height={20} />
-        </button>
+          
+              <ChevronLeft className="w-5 h-5 text-white"/>
+
+                  </button>
         <button
           onClick={handleNext}
-          className="absolute right-[5px] sm:right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-1 sm:p-2 rounded-full z-20"
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-2 rounded-full z-20"
         >
-          <Image src="/icons/arrow-right.svg" alt="Next" width={20} height={20} />
+              <ChevronRight className="w-5 h-5 text-white"/>
         </button>
 
-        <div className="absolute bottom-2 right-2 flex gap-1 sm:gap-2 z-20">
+        <div className="absolute bottom-2 right-2 flex gap-2 z-20">
           <button
             onClick={() => setIsMuted(!isMuted)}
-            className="bg-white/20 hover:bg-white/40 p-1 sm:p-2 rounded-full text-xs sm:text-sm"
+            className="bg-white/20 hover:bg-white/40 p-2 rounded-full text-sm"
           >
             {isMuted ? "🔇" : "🔊"}
           </button>
           <button
             onClick={() => videoRef.current?.requestFullscreen()}
-            className="bg-white/20 hover:bg-white/40 p-1 sm:p-2 rounded-full text-xs sm:text-sm"
+            className="bg-white/20 hover:bg-white/40 p-2 rounded-full text-sm"
           >
             ⛶
           </button>
         </div>
 
-        <div className="absolute top-1 left-1 sm:top-2 sm:left-2 text-white font-bold bg-black/40 px-1 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm truncate max-w-[95%]">
+        <div className="absolute top-2 left-2 text-white font-bold bg-black/40 px-2 py-1 rounded text-sm truncate max-w-[95%]">
           {videos[currentIndex].title}
         </div>
       </div>
     </div>
   );
 }
+
+
+
