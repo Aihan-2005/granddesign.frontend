@@ -26,7 +26,7 @@ export default function HomePage(){
                 <SliderProjects />
             </div>
 
-            <div className="px-[150px]">
+            <div id="portfolio" className="px-[150px]">
                 <VideoPlayerHome />
             </div>
 

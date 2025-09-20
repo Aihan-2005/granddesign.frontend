@@ -2,20 +2,64 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMenuStore } from "@/zustand/store";
+import { useRouter, usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Navbar() {
   const { isOpen, openMenu, closeMenu } = useMenuStore();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const navItems = [
     { title: "blog", textTitle: "وبلاگ", href: "#blog" },
     { title: "portfolio", textTitle: "انیمیشن", href: "#portfolio" },
-    {
-      title: "services",
-      textTitle: "VR360",
-      href: "#vr-home",
-    },
+    { title: "services", textTitle: "VR360", href: "#vr-home" },
     { title: "about", textTitle: "خدمات ما", href: "#about" },
   ];
+
+  
+  const handleNavClick = (href) => {
+    closeMenu(); 
+    
+    
+    if (pathname !== "/") {
+      
+      sessionStorage.setItem('scrollToHash', href);
+      router.push("/");
+    } else {
+      
+      scrollToSection(href);
+    }
+  };
+
+  
+  const scrollToSection = (hash) => {
+    setTimeout(() => {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }, 100);
+  };
+
+  
+  useEffect(() => {
+    if (pathname === "/") {
+      const hash = sessionStorage.getItem('scrollToHash');
+      if (hash) {
+        scrollToSection(hash);
+        sessionStorage.removeItem('scrollToHash');
+      }
+      
+     
+      if (window.location.hash) {
+        scrollToSection(window.location.hash);
+      }
+    }
+  }, [pathname]);
 
   return (
     <nav
@@ -26,38 +70,47 @@ export default function Navbar() {
       <div className="hidden md:flex items-center gap-8 lg:ml-20 md:ml-10">
         <Link
           href="/store"
-          className="rounded-md bg-green-600 px-6 py-3 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+          className="rounded-md bg-green-600 px-6 py-3 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
         >
           فروشگاه
         </Link>
         {navItems.map((item) => (
-          <Link
+          <button
             key={item.title}
-            href={item.href}
-            className="relative text-gray-300 font-medium transition-colors duration-300 group"
+            onClick={() => handleNavClick(item.href)}
+            className="relative text-gray-300 font-medium transition-colors duration-300 group hover:text-white cursor-pointer"
           >
             {item.textTitle}
             <span className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-green-700 transition-all duration-300 group-hover:w-full" />
-          </Link>
+          </button>
         ))}
       </div>
 
       {/* Logo */}
       <div className="flex items-center gap-4">
-        <Image
-          src="/images/20241027_175834.png"
-          alt="لوگو آرمان هوم"
-          width={60}
-          height={60}
-          className="transition-transform duration-300 hover:scale-110"
-        />
+        <Link 
+          href="/"
+          className="transition-transform duration-300 hover:scale-110 cursor-pointer"
+          onClick={() => {
+            closeMenu();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <Image
+            src="/images/20241027_175834.png"
+            alt="لوگو آرمان هوم"
+            width={60}
+            height={60}
+            className="cursor-pointer"
+          />
+        </Link>
       </div>
 
       {/* Mobile Menu Button */}
       <div className="md:hidden">
         <button
           onClick={openMenu}
-          className="text-white focus:outline-none"
+          className="text-white focus:outline-none text-2xl cursor-pointer"
           aria-label="Open menu"
         >
           ☰
@@ -79,7 +132,7 @@ export default function Navbar() {
         </h5>
         <button
           onClick={closeMenu}
-          className="absolute top-2.5 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-500 hover:text-gray-900 dark:hover:text-black rounded-lg text-sm w-8 h-8 flex items-center justify-center"
+          className="absolute top-2.5 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-500 hover:text-gray-900 dark:hover:text-black rounded-lg text-sm w-8 h-8 flex items-center justify-center cursor-pointer"
           aria-controls="drawer-navigation"
           aria-label="Close menu"
         >
@@ -94,7 +147,7 @@ export default function Navbar() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+              d="m1 1 6 6m0 0 6 极M7 7l6-6M7 7l-6 6"
             />
           </svg>
         </button>
@@ -103,12 +156,13 @@ export default function Navbar() {
           <li>
             <Link
               href="/store"
-              className="flex items-center p-2 text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-500 group"
+              className="flex items-center p-2 text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-500 group cursor-pointer"
+              onClick={closeMenu}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 24 24"
+                viewBox="极 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
                 className="w-6 h-6"
@@ -119,14 +173,14 @@ export default function Navbar() {
                   d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                 />
               </svg>
-              <span className="flex-1 ms-3 text-right">فروشگاه</span>
+              <span className="flex-1 ms-3 text-right cursor-pointer">فروشگاه</span>
             </Link>
           </li>
           {navItems.map((item) => (
             <li key={item.title}>
-              <Link
-                href={item.href}
-                className="flex items-center p-2 text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-500 group"
+              <button
+                onClick={() => handleNavClick(item.href)}
+                className="flex items-center p-2 text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-500 group w-full cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -134,16 +188,16 @@ export default function Navbar() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="w-6 h-6 cursor-pointer"
                 >
                   <path
-                    strokeLinecap="round"
+                    stroke极cap="round"
                     strokeLinejoin="round"
-                    d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
+                    d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 极 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
                   />
                 </svg>
-                <span className="flex-1 ms-3 text-right">{item.textTitle}</span>
-              </Link>
+                <span className="flex-1 ms-3 text-right cursor-pointer">{item.textTitle}</span>
+              </button>
             </li>
           ))}
         </ul>
@@ -152,7 +206,7 @@ export default function Navbar() {
       {/* Overlay for Mobile Menu */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/30 z-40 md:hidden"
+          className="fixed inset-0 bg-black/30 z-40 md:hidden cursor-pointer"
           onClick={closeMenu}
           aria-hidden="true"
         />
