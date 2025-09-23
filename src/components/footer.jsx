@@ -26,12 +26,12 @@ export default function Footer() {
      grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center items-center text-center md:text-start">
       {/* ستون 1 - جدیدترین پروژه‌ها */}
       <div className="flex flex-col gap-4">
-        <h3 className="text-white font-semibold text-lg mb-3">   چرا باید عضو شوید؟</h3>
+        <h3 className="text-white font-semibold text-lg mb-2 ml-3">  تخفیف‌ها و خبرهای ویژه رو از دست نده </h3>
         {/* <p className="text-sm">همین الان تماس بگیرید و شروع کنید به همکاری با ما</p> */}
         <div className="flex gap-2 mt-3">
           <input
             type="email"
-            placeholder="ایمیل خود را وارد کنید"
+            placeholder="شماره خود را وارد کنید"
             className="bg-gray-800 border border-gray-600 rounded-md px-3 py-2 h-[50px] w-[200px] text-gray-200 placeholder-gray-500 focus:outline-none focus:border-green-500"
           />
           <button className="bg-green-500 text-white rounded-md  h-[50px] w-[100px] font-semibold hover:bg-green-600 transition">
