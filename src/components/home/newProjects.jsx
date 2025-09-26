@@ -42,7 +42,7 @@ export default function NewProjectsHome() {
             <div className="relative w-[70px] h-[70px] overflow-hidden rounded-md">
               <Image
                 src={`/images/newprojects/se-icon${item.icon}.png`}
-                alt={item.title}
+                alt={item.icon}
                 fill
                 className="object-contain group-hover:scale-110 transition-all duration-700"
               />

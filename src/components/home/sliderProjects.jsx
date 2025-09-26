@@ -14,9 +14,19 @@ export default function SliderProjects() {
     { image: "02", text: "پروژه کاری 2"  , id:"2"  },
     { image: "03", text: "پروژه کاری 3"  , id:"3"  },
     { image: "04", text: "پروژه کاری 4"  , id:"4"  },
-    { image: "01", text: "پروژه کاری 1"  , id:"5"  },
-    { image: "02", text: "پروژه کاری 2"  , id:"6"  },
-    { image: "03", text: "پروژه کاری 3"  , id:"7"  },
+    { image: "01", text: "پروژه کاری 5"  , id:"5"  },
+    { image: "02", text: "پروژه کاری 6"  , id:"6"  },
+    { image: "03", text: "پروژه کاری 7"  , id:"7"  },
+    { image: "04", text: "پروژه کاری 8"  , id:"8"  },
+    { image: "01", text: "پروژه کاری 9"  , id:"9"  },
+    { image: "02", text: "پروژه کاری 10"  , id:"10"  },
+    { image: "03", text: "پروژه کاری 11"  , id:"11"  },
+    { image: "04", text: "پروژه کاری 12"  , id:"12"  },
+    { image: "01", text: "پروژه کاری 13"  , id:"13"  },
+    { image: "03", text: "پروژه کاری 14"  , id:"14"  },
+    { image: "03", text: "پروژه کاری 15"  , id:"15"  },
+    { image: "04", text: "پروژه کاری 16"  , id:"16"  },
+    { image: "01", text: "پروژه کاری 17"  , id:"17"  },
   ];
 
   return (
