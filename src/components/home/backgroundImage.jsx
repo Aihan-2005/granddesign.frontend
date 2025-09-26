@@ -6,7 +6,7 @@ import "swiper/css";
 export default function BackgroundImage() {
   const slides = [
     {
-      image: "/images/background1.png",
+      image: "/images/background13.jpg",
       title: "طراحی مدرن خانه",
       description: "تجربه‌ای متفاوت و خاص با تیم با‌تجربه ما",
       button: "همین اکنون شروع کنید",
