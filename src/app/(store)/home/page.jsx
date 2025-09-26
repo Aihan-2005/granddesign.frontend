@@ -18,7 +18,6 @@ export default function HomePage(){
 
             <div className="px-[50px]">
                 <BackgroundeAboutUs/>
-                <TeamSection/>
                 <section id="about">
                     <NewProjectsHome/>
                 </section>
@@ -30,7 +29,6 @@ export default function HomePage(){
                 <VideoPlayerHome />
             </div>
 
-            <Team/> 
             <section id="vr-home">
                 <VR360/>
             </section>
@@ -39,6 +37,10 @@ export default function HomePage(){
             <div className="px-[50px]">
                 <WeblogHome/>
             </div>
+            <TeamSection/>
+                        <Team/> 
+
+
 
         </>
     )

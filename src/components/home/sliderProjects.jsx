@@ -42,7 +42,7 @@ export default function SliderProjects() {
       >
         <div className="text-center space-y-3">
   <p className="text-green-900 text-5xl sm:text-6xl font-extrabold">
-    ویترین پروژه‌ها
+     پروژه‌ها اخیر
   </p>
   <p className="text-white/100 text-2xl sm:text-3xl font-semibold">
     جدیدترین شاهکارها

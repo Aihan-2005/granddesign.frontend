@@ -132,9 +132,9 @@ const cardNames = [
 return(
   <section className="py-15 pb-[15px] rounded-2xl mb-17">
     <div className="max-w-7px mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-extrabold text-green-800 text-center">
-       با تیم جوان اما با تجربه ما  بیشتر اشنا شوید
-      </h1>
+      <h1 className="text-3xl font-extrabold text-green-500 text-right">
+         اعضا تیم 
+              </h1>
     </div>
 
     <div className="mt-12 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">

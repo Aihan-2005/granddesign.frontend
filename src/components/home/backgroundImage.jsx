@@ -6,13 +6,13 @@ import "swiper/css";
 export default function BackgroundImage() {
   const slides = [
     {
-      image: "/images/background13.jpg",
+      image: "/images/background11.jpg",
       title: "طراحی مدرن خانه",
       description: "تجربه‌ای متفاوت و خاص با تیم با‌تجربه ما",
       button: "همین اکنون شروع کنید",
     },
     {
-      image: "/images/background2.png",
+      image: "/images/background12.jpg",
       title: "فروش ویژه وسایل خانه",
       description: "بهترین وسایل تزئینی و کاربردی برای زیباسازی فضای خانه و حیاط",
       button: "مشاهده محصولات",
