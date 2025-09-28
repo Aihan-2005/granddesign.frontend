@@ -12,8 +12,10 @@ export default function WeblogHome() {
     <div className="w-full flex flex-col py-[40px] text-white" dir="rtl" id="blog">
       <div className="w-full py-2 flex flex-col sm:flex-row justify-between items-center sm:items-center gap-4 px-4">
         <div className="w-full flex flex-col items-center sm:items-start text-center sm:text-right gap-4 px-4">
-          <p className="text-green-600 text-2xl sm:text-3xl w-full">رزمه ما</p>
-          <p className="text-black text-xl sm:text-3xl font-bold w-full sm:w-auto">با ما بیشتر آشنا شوید</p>
+          <p className="text-green-600 text-2xl sm:text-3xl w-full">  بخشی از رزومه و دستاوردهای ما
+</p>
+          <p className="text-black text-xl sm:text-3xl font-bold w-full sm:w-auto">  پروژه‌ها و تخصص‌های ما را بهتر بشناسید
+</p>
         </div>
       </div>
 

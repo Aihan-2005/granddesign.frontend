@@ -84,10 +84,10 @@ export default function Resume1(){
     >
       <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
         <div className="text-right mt-5">
-          <h1 className="text-3xl sm:text-4xl font-bold">نما و محوطه</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold">تجاری و اداری</h1>
           <p className="mt-2 text-gray-300 text-sm sm:text-base max-w-xl">
-            معرفی پروژه‌های برتر طراحی نما و محوطه با ما.  
-            در این بخش نمونه پروژه‌ها را مشاهده می‌کنید که هر کدام با دقت و تمرکز ویژه روی زیبایی و عملکرد محیط طراحی شده‌اند.
+  فضای کاری شما ویترین موفقیت شماست.  
+  با طراحی‌های مدرن و منحصربه‌فرد ما، محیطی خواهید داشت که اعتبار برندتان را تقویت کرده و تجربه‌ای فراموش‌نشدنی ایجاد می‌کند.
           </p>
         </div>
       </div>
