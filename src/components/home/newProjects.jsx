@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 
 export default function NewProjectsHome() {
   const data = [
-    { text: 'طراحی نمای ساختمان', icon: "1" },
-    { text: 'طراحی داخلی ساختمان', icon: "2" },
-    { text: 'طراحی کابینت', icon: "3" },
-    { text:  'طراحی محوطه و حیاط', icon: "4" },
-    { text: 'دکوراسیون', icon: "5" },
-    { text: 'پیمانکاری نظارت و اجرا', icon: "6" },
-    { text: ' توری مجازی vr360 ', icon: "7" },
-    { text: 'انیمشن و کلیپ', icon: "8" },
-    { text: 'از فکر و ایده تا کلید ', icon: "9" },
+    { text: 'طراحی نمای ساختمان', icon: "/images/newprojects/icons8-building-80.png" },
+    { text: 'طراحی داخلی ساختمان', icon: "/images/newprojects/icons8-room-64.png" },
+    { text: 'طراحی کابینت', icon: "/images/newprojects/icons8-cabinet-64.png" },
+    { text:  'طراحی محوطه و حیاط', icon: "/images/newprojects/icons8-inland-50.png" },
+    { text: 'دکوراسیون', icon: "/images/newprojects/icons8-home-decoration-64.png" },
+    { text: 'پیمانکاری نظارت و اجرا', icon: "/images/newprojects/icons8-administration-64.png" },
+    { text: ' توری مجازی vr360 ', icon: "/images/newprojects/icons8-vr-100.png" },
+    { text: 'انیمشن و کلیپ', icon: "/images/newprojects/icons8-clip-96.png" },
+    { text: 'از فکر و ایده تا کلید ', icon: "/images/newprojects/icons8-idea-80.png" },
   ];
 
   return (
@@ -41,7 +41,7 @@ export default function NewProjectsHome() {
            
             <div className="relative w-[70px] h-[70px] overflow-hidden rounded-md">
               <Image
-                src={`/images/newprojects/se-icon${item.icon}.png`}
+                src={item.icon}
                 alt={item.icon}
                 fill
                 className="object-contain group-hover:scale-110 transition-all duration-700"

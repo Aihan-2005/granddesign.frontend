@@ -11,23 +11,23 @@ import Link from "next/link";
 
 export default function SliderProjects() {
   const Images = [
-    { image: "01", text: "پروژه کاری 1", id: "1" },
-    { image: "02", text: "پروژه کاری 2", id: "2" },
-    { image: "03", text: "پروژه کاری 3", id: "3" },
-    { image: "04", text: "پروژه کاری 4", id: "4" },
-    { image: "01", text: "پروژه کاری 5", id: "5" },
-    { image: "02", text: "پروژه کاری 6", id: "6" },
-    { image: "03", text: "پروژه کاری 7", id: "7" },
-    { image: "01", text: "پروژه کاری 8", id: "8" },
-    { image: "02", text: "پروژه کاری 9", id: "9" },
-    { image: "03", text: "پروژه کاری 10", id: "10" },
-    { image: "01", text: "پروژه کاری 11", id: "11" },
-    { image: "02", text: "پروژه کاری 12", id: "12" },
-    { image: "03", text: "پروژه کاری 13", id: "13" },
-    { image: "01", text: "پروژه کاری 14", id: "14" },
-    { image: "02", text: "پروژه کاری 15", id: "15" },
-    { image: "03", text: "پروژه کاری 16", id: "16" },
-    { image: "01", text: "پروژه کاری 17", id: "17" },
+    { image: "/akhir/amlak-golstan/w1.jpg", text: "پروژه کاری 1", id: "1" },
+    { image: "/akhir/areshga-jfri/a.jpg", text: "پروژه کاری 2", id: "2" },
+    { image: "/akhir/daftar froosh-astane-amozade/brnjj (2).jpg", text: "پروژه کاری 3", id: "3" },
+    { image: "/akhir/jana-jafarpoor/1(1).jpg", text: "پروژه کاری 4", id: "4" },
+    { image: "/akhir/janbazan-kafe kamlia/1 (5).jpg", text: "پروژه کاری 5", id: "5" },
+    { image: "/akhir/kargare 5, aqa bozorgi(9)/enhanced-image (26).jpg", text: "پروژه کاری 6", id: "6" },
+    { image: "/akhir/kiashar-rahimzade/kiashar (11).jpg", text: "پروژه کاری 7", id: "7" },
+    { image: "/akhir/nama khararod/hsniiiasl (11).jpg", text: "پروژه کاری 8", id: "8" },
+    { image: "/akhir/nilass-lahijan/aslia (2).jpg", text: "پروژه کاری 9", id: "9" },
+    { image: "/akhir/PENT/P5.jpg", text: "پروژه کاری 10", id: "10" },
+    { image: "/akhir/penttttt-bakhshi/b1.jpg", text: "پروژه کاری 11", id: "11" },
+    { image: "/akhir/sazesh-kargarrr/komdpsr (10).jpg", text: "پروژه کاری 12", id: "12" },
+    { image: "/akhir/shohani-jangal3000/sh1.jpg", text: "پروژه کاری 13", id: "13" },
+    { image: "/akhir/siakal-vila-saeidi/saeidiii (9).jpg", text: "پروژه کاری 14", id: "14" },
+    { image: "/akhir/VAHED/v2.jpg", text: "پروژه کاری 15", id: "15" },
+    { image: "/akhir/vila jngl2000-mohamadi/2.jpg", text: "پروژه کاری 16", id: "16" },
+    { image: "/akhir/vila-saeidi-siakal/saeidiii (1).jpg", text: "پروژه کاری 17", id: "17" },
   ];
 
   const cardVariants = {
@@ -91,7 +91,7 @@ export default function SliderProjects() {
                 className="w-full h-full relative group overflow-hidden rounded-lg shadow-md block"
               >
                 <Image
-                  src={`/images/projectsImage/protfolio-img${image.image}.png`}
+                  src={image.image}
                   width={400}
                   height={300}
                   alt="project"

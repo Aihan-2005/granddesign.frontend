@@ -27,8 +27,8 @@ export default function Footer() {
             <Image
               src="/images/20241027_175739_0000.png"
               alt="لوگو آرمان هوم"
-              width={60}
-              height={60}
+              width={400}
+              height={400}
               className="w-60 h-60"
             />
           </div>
