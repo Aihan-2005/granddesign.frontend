@@ -37,7 +37,7 @@ export default function BackgroundImage() {
               />
 
               {/* متن روی هر اسلاید */}
-              <div className="absolute top-[43%] md:top-[50%] right-[10%] text-right w-[90%] md:w-[90%] h-[60%] md:h-[50%] flex justify-end items-start p-0 md:p-1 z-10">
+              <div className="absolute top-[43%] md:top-[40%] right-[10%] text-right w-[90%] md:w-[90%] h-[60%] md:h-[50%] flex justify-end items-start p-0 md:p-1 z-10">
                 <div>
                   <p className="text-xl sm:text-3xl md:text-5xl my-1 text-white font-bold">
                     {slide.title}

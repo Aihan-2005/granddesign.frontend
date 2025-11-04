@@ -38,6 +38,8 @@ export default function Footer() {
         <div className="md:mt-[-60] text-center md:text-center">
           <h3 className="text-white font-semibold text-lg mb-4">درباره گرند دیزاین</h3>
           <p>گرند دیزاین جاییه که خلاقیت و تکنولوژی دست به دست هم میدن تا رویاهای شما رو به واقعیت تبدیل کنن</p>
+          <br/>
+          <p>اکر میخواهید محیط خود را تغییر دهید به تیم حرفه ای ما بسپارید</p>
         </div>
 
         {/* ستون 3 - تماس */}

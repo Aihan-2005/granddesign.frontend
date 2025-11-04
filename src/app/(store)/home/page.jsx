@@ -37,8 +37,9 @@ export default function HomePage(){
             <div className="px-[50px]">
                 <WeblogHome/>
             </div>
-            <TeamSection/>
-                        <Team/> 
+            <Team/> 
+            {/* <TeamSection/> */}
+                        
 
 
 
