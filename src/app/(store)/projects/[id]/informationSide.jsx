@@ -2,10 +2,10 @@ export default function InformationSideProject({ param }) {
   
   const projects = {
     1: {
-      category: "   ",
-      time: "",
-      client: "  ",
-      location:" "
+      category: " طراحی تجاری داخلی  ",
+      time: "1401",
+      client: " مهندس بخشی پور ",
+      location:" بلوار امام رضا"
     },
     2: {
       category: "سالن زیبایی  ",
