@@ -119,7 +119,7 @@ export default function Footer() {
   </a>
         </div>
       </div>
-              <p className="text-center text-green-600 bg-black"> ساخته شده با ♥️ توسط  <span class="font-semibold">استارتاپ وایزر</span></p>
+              <p className="text-center text-green-600 bg-black"> ساخته شده با ♥️ توسط  <span className="font-semibold">استارتاپ وایزر</span></p>
 
     </div>
   );
