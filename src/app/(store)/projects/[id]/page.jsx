@@ -13,10 +13,10 @@ export default async function ProjectPage({params}) {
       {/* اطلاعات پروژه */}
       <div className="grid md:grid-cols-3 gap-8 " dir="rtl">
         {/* بخش اصلی */}
-<InformationMainProject />
+<InformationMainProject param={id} />
 
         {/* اطلاعات جانبی */}
-<InformationSideProject/>
+<InformationSideProject param={id} />
       </div>
     </div>
   );
