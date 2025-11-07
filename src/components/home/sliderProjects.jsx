@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar } from "swiper/modules";
@@ -11,22 +12,22 @@ import Link from "next/link";
 export default function SliderProjects() {
   const Images = [
     { image: "/akhir/amlak-golstan/w1.jpg", text: "مشاور املاک", id: "1" },
-    { image: "/akhir/areshga-jfri/a.jpg", text: "سالن زیبایی  ", id: "2" },
-    { image: "/akhir/daftar froosh-astane-amozade/brnjj (2).jpg", text: "دفتر کار   ", id: "3" },
-    { image: "/akhir/jana-jafarpoor/1(1).jpg", text: "رستوران جانا  ", id: "4" },
+    { image: "/akhir/areshga-jfri/a.jpg", text: "سالن زیبایی", id: "2" },
+    { image: "/akhir/daftar froosh-astane-amozade/brnjj (2).jpg", text: "دفتر کار", id: "3" },
+    { image: "/akhir/jana-jafarpoor/1(1).jpg", text: "رستوران جانا", id: "4" },
     { image: "/akhir/janbazan-kafe kamlia/1 (5).jpg", text: "کافه کاملیا", id: "5" },
-    { image: "/akhir/kargare 5, aqa bozorgi(9)/enhanced-image (26).jpg", text: "منزل آقابزرگی  ", id: "6" },
-    { image: "/akhir/kiashar-rahimzade/kiashar (11).jpg", text: " ویلای کیاشهر ", id: "7" },
-    { image: "/akhir/nama khararod/hsniiiasl (11).jpg", text: "ویلای خرارود ", id: "8" },
-    { image: "/akhir/nilass-lahijan/aslia (2).jpg", text: "ساختمان جانا ", id: "9" },
-    { image: "/akhir/PENT/P5.jpg", text: " پنت هاوس هدایت", id: "10" },
-    { image: "/akhir/penttttt-bakhshi/b1.jpg", text: "سکوت سبز  ", id: "11" },
-    { image: "/akhir/sazesh-kargarrr/komdpsr (10).jpg", text: "ساختمان پرنیان ", id: "12" },
-    { image: "/akhir/shohani-jangal3000/sh1.jpg", text: "خانه ای در میان درختان  ", id: "13" },
-    { image: "/akhir/siakal-vila-saeidi/saeidiii (9).jpg", text: "ویلای سیاهکل ", id: "14" },
-    { image: "/akhir/VAHED/v2.jpg", text:"آپارتمان هدایت ", id: "15" },
-    { image: "/akhir/vila jngl2000-mohamadi/2.jpg", text:"ویلای 3000  ", id: "16" },
-    { image: "/akhir/vila-saeidi-siakal/saeidiii (1).jpg", text: "ویلای سیاهکل-داخلی ", id: "17" },
+    { image: "/akhir/kargare 5, aqa bozorgi(9)/enhanced-image (26).jpg", text: "منزل آقابزرگی", id: "6" },
+    { image: "/akhir/kiashar-rahimzade/kiashar (11).jpg", text: "ویلای کیاشهر", id: "7" },
+    { image: "/akhir/nama khararod/hsniiiasl (11).jpg", text: "ویلای خرارود", id: "8" },
+    { image: "/akhir/nilass-lahijan/aslia (2).jpg", text: "ساختمان جانا", id: "9" },
+    { image: "/akhir/PENT/P5.jpg", text: "پنت هاوس هدایت", id: "10" },
+    { image: "/akhir/penttttt-bakhshi/b1.jpg", text: "سکوت سبز", id: "11" },
+    { image: "/akhir/sazesh-kargarrr/komdpsr (10).jpg", text: "ساختمان پرنیان", id: "12" },
+    { image: "/akhir/shohani-jangal3000/sh1.jpg", text: "خانه‌ای در میان درختان", id: "13" },
+    { image: "/akhir/siakal-vila-saeidi/saeidiii (9).jpg", text: "ویلای سیاهکل", id: "14" },
+    { image: "/akhir/VAHED/v2.jpg", text: "آپارتمان هدایت", id: "15" },
+    { image: "/akhir/vila jngl2000-mohamadi/2.jpg", text: "ویلای 3000", id: "16" },
+    { image: "/akhir/vila-saeidi-siakal/saeidiii (1).jpg", text: "ویلای سیاهکل (داخلی)", id: "17" },
   ];
 
   const cardVariants = {
@@ -36,8 +37,8 @@ export default function SliderProjects() {
       y: 0,
       scale: 1,
       transition: {
-        delay: i * 0.15,
-        duration: 0.6,
+        delay: i * 0.12,
+        duration: 0.5,
         ease: "easeOut",
       },
     }),
@@ -45,12 +46,12 @@ export default function SliderProjects() {
 
   return (
     <div className="py-16 mt-20 text-white" dir="rtl">
-      {/* ✨ تیتر بدون بک‌گراند */}
+      {/* ✨ تیتر لوکس بدون بک‌گراند */}
       <div className="w-full text-center space-y-2 mb-10">
-        <p className="text-green-800 text-5xl sm:text-6xl font-extrabold drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
+        <p className="text-teal-500 text-5xl sm:text-6xl font-extrabold drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
           هر پروژه، روایتی از خلاقیت و اصالت
         </p>
-        <p className="text-gray-300 text-2xl sm:text-3xl font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+        <p className="text-gray-300 text-2xl sm:text-3xl font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
           از گرند دیزاین تا تحقق رؤیاهای معماری
         </p>
       </div>
@@ -83,19 +84,24 @@ export default function SliderProjects() {
             >
               <Link
                 href={`/projects/${image.id}`}
-                className="w-full h-full relative group overflow-hidden rounded-[14px] shadow-md block"
+                className="w-full h-full relative group overflow-hidden rounded-[14px] shadow-lg block"
               >
                 <Image
                   src={image.image}
                   width={400}
                   height={300}
-                  alt="project"
+                  {...(index === 0
+                    ? { priority: true }            // فقط اولین عکس سریع لود می‌شود
+                    : { loading: "lazy" })}          // بقیه لود تنبل دارند
+                  placeholder="blur"
+                  blurDataURL="/blur-placeholder.webp"
+                  alt={image.text}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
                 />
 
-                {/* بدون overlay یا گرادینت */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                  <p className="text-teal-300 text-lg sm:text-xl font-semibold drop-shadow-lg">
+                {/* متن پروژه روی عکس */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-teal-300 text-lg sm:text-xl font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
                     {image.text}
                   </p>
                 </div>

@@ -151,7 +151,7 @@ export default function VideoCarousel() {
 
   const videos = [
     { id: 1, src: "/videos/1.mp4", title: "انیمیشن 1" },
-    { id: 2, src: "/videos/1.mp4", title: "انیمیشن 2" },
+    { id: 2, src: "/videos/videoHome.mp4", title: "انیمیشن 2" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
