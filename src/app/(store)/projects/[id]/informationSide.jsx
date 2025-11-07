@@ -1,3 +1,7 @@
+'use client'
+import { useRouter } from "next/navigation"
+
+
 export default function InformationSideProject({ param }) {
   
   const projects = {
@@ -104,7 +108,10 @@ export default function InformationSideProject({ param }) {
       location: "سیاهکل"
     }
   }
-
+   const handleCall = () => {
+   
+    window.location.href = 'tel:09916393684';
+  };
   const project = projects[param]
 
   if (!project) {
@@ -131,7 +138,7 @@ export default function InformationSideProject({ param }) {
           </div>
         </div>
 
-        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 cursor-pointer rounded-lg hover:scale-[1.03] duration-300 font-medium transition">
+        <button onClick={handleCall} className="w-full bg-green-600 hover:bg-green-700 text-white py-3 cursor-pointer rounded-lg hover:scale-[1.03] duration-300 font-medium transition">
           تماس برای همکاری
         </button>
       </div>

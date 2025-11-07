@@ -6,7 +6,7 @@ import ImagesProject from "./ImagesProject";
 export default async function ProjectPage({params}) {
     const {id} = await params
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12  text-gray-100">
+    <div className="max-w-6xl mx-auto px-4 py-12  text-gray-100 mt-10">
       {/* تصویر اصلی پروژه */}
 
 <ImagesProject param={id}/>
