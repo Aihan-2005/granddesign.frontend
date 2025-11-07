@@ -46,7 +46,6 @@ export default function SliderProjects() {
 
   return (
     <div className="py-16 mt-20 text-white" dir="rtl">
-      {/* ✨ تیتر لوکس بدون بک‌گراند */}
       <div className="w-full text-center space-y-2 mb-10">
         <p className="text-teal-500 text-5xl sm:text-6xl font-extrabold drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
           هر پروژه، روایتی از خلاقیت و اصالت
@@ -56,7 +55,6 @@ export default function SliderProjects() {
         </p>
       </div>
 
-      {/* 🔹 اسلایدر پروژه‌ها بدون گرادینت */}
       <Swiper
         scrollbar={{ hide: true }}
         slidesPerView={4}
@@ -90,20 +88,22 @@ export default function SliderProjects() {
                   src={image.image}
                   width={400}
                   height={300}
-                  {...(index === 0
-                    ? { priority: true }            // فقط اولین عکس سریع لود می‌شود
-                    : { loading: "lazy" })}          // بقیه لود تنبل دارند
-                  placeholder="blur"
-                  blurDataURL="/blur-placeholder.webp"
+                  {...(index === 0 ? { priority: true } : { loading: "lazy" })}
                   alt={image.text}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
                 />
 
-                {/* متن پروژه روی عکس */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className="text-teal-300 text-lg sm:text-xl font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <motion.p
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-teal-300 text-2xl sm:text-3xl font-extrabold tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                  >
                     {image.text}
-                  </p>
+                  </motion.p>
                 </div>
               </Link>
             </motion.div>
