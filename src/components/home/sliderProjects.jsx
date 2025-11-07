@@ -3,7 +3,6 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar } from "swiper/modules";
 import { motion } from "framer-motion";
-
 import "swiper/css";
 import "swiper/css/scrollbar";
 import Image from "next/image";
@@ -31,13 +30,13 @@ export default function SliderProjects() {
   ];
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
     visible: (i) => ({
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        delay: i * 0.15, 
+        delay: i * 0.15,
         duration: 0.6,
         ease: "easeOut",
       },
@@ -45,22 +44,18 @@ export default function SliderProjects() {
   };
 
   return (
-    <div className="py-5 mt-30">
-      <div
-        className="w-full py-2 flex justify-between items-center gap-4"
-        dir="rtl"
-      >
-        <div className="text-center space-y-3">
-  <p className="text-green-900 text-5xl sm:text-6xl font-extrabold">
-     پروژه‌ها اخیر
-  </p>
-  <p className="text-white/100 text-2xl sm:text-3xl font-semibold">
-    جدیدترین شاهکارها
-  </p>
-</div>
-
+    <div className="py-16 mt-20 text-white" dir="rtl">
+      {/* ✨ تیتر بدون بک‌گراند */}
+      <div className="w-full text-center space-y-2 mb-10">
+        <p className="text-green-800 text-5xl sm:text-6xl font-extrabold drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
+          هر پروژه، روایتی از خلاقیت و اصالت
+        </p>
+        <p className="text-gray-300 text-2xl sm:text-3xl font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+          از گرند دیزاین تا تحقق رؤیاهای معماری
+        </p>
       </div>
 
+      {/* 🔹 اسلایدر پروژه‌ها بدون گرادینت */}
       <Swiper
         scrollbar={{ hide: true }}
         slidesPerView={4}
@@ -74,7 +69,7 @@ export default function SliderProjects() {
         }}
         grabCursor={true}
         modules={[Scrollbar]}
-        className="mySwiper h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
+        className="mySwiper h-[280px] sm:h-[330px] md:h-[380px] lg:h-[420px]"
       >
         {Images.map((image, index) => (
           <SwiperSlide key={index}>
@@ -88,17 +83,21 @@ export default function SliderProjects() {
             >
               <Link
                 href={`/projects/${image.id}`}
-                className="w-full h-full relative group overflow-hidden rounded-lg shadow-md block"
+                className="w-full h-full relative group overflow-hidden rounded-[14px] shadow-md block"
               >
                 <Image
                   src={image.image}
                   width={400}
                   height={300}
                   alt="project"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
                 />
-                <div className="absolute top-0 left-0 w-full h-full bg-black/80 translate-y-full group-hover:translate-y-0 transition-all duration-500 flex items-center justify-center text-center text-white text-lg font-bold">
-                  {image.text}
+
+                {/* بدون overlay یا گرادینت */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                  <p className="text-teal-300 text-lg sm:text-xl font-semibold drop-shadow-lg">
+                    {image.text}
+                  </p>
                 </div>
               </Link>
             </motion.div>
