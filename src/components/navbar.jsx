@@ -11,7 +11,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navItems = [
-    { title: "blog", textTitle: "رزمه ما", href: "#blog" },
+    { title: "blog", textTitle: "رزومه ما", href: "#blog" },
     { title: "portfolio", textTitle: "انیمیشن", href: "#portfolio" },
     { title: "services", textTitle: "VR360", href: "#vr-home" },
     { title: "about", textTitle: "خدمات ما", href: "#about" },

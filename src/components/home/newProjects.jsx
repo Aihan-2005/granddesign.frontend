@@ -11,8 +11,8 @@ export default function NewProjectsHome() {
     { text:  'طراحی محوطه و حیاط', icon: "/images/newprojects/icons8-inland-50.png" },
     { text: 'دکوراسیون', icon: "/images/newprojects/icons8-home-decoration-64.png" },
     { text: 'پیمانکاری نظارت و اجرا', icon: "/images/newprojects/icons8-administration-64.png" },
-    { text: ' توری مجازی vr360 ', icon: "/images/newprojects/icons8-vr-100.png" },
-    { text: 'انیمشن و کلیپ', icon: "/images/newprojects/icons8-clip-96.png" },
+    { text: ' تور مجازی vr360 ', icon: "/images/newprojects/icons8-vr-100.png" },
+    { text: 'انیمیشن و کلیپ', icon: "/images/newprojects/icons8-clip-96.png" },
     { text: 'از فکر و ایده تا کلید ', icon: "/images/newprojects/icons8-idea-80.png" },
   ];
 
