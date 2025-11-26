@@ -1,13 +1,17 @@
-// app/home/layout.jsx
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import AI from "@/components/home/AI"; 
 
 export default function LayoutHome({ children }) {
   return (
     <>
-      <Navbar />    {/* هدر */}
-      {children}    {/* محتوای صفحه */}
-      <Footer />    {/* فوتر */}
+      <Navbar />        
+      {children}       
+      
+      <AI />           
+      
+      <Footer />        
     </>
   );
 }
+  
