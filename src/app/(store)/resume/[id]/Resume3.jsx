@@ -149,6 +149,7 @@ export default function Resume1(){
               src={item.src}
               alt={item.alt}
               fill
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 25vw, 12.5vw"
               className="object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
@@ -176,6 +177,7 @@ export default function Resume1(){
               src={selectedImage}
               alt="بزرگ شده"
               fill
+              sizes="(max-width: 768px) 95vw, (max-width: 1024px) 75vw, 50vw" 
               className="object-contain"
             />
           </div>

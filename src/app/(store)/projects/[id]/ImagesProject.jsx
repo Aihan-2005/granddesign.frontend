@@ -1,4 +1,3 @@
-
 "use client"
 import Image from "next/image"
 import { useState } from "react"
@@ -54,6 +53,8 @@ export default function ImagesProject({ param }) {
             alt="image"
             width={1200}
             height={800}
+            sizes="100vw"
+            priority
             className="w-full h-full object-cover"
           />
         </div>
@@ -73,6 +74,7 @@ export default function ImagesProject({ param }) {
                 alt="image"
                 width={200}
                 height={150}
+                sizes="128px"
                 className="w-full h-full object-cover"
               />
             </div>

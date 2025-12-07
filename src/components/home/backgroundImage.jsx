@@ -45,9 +45,11 @@ export default function BackgroundImage() {
                   <p className="text-sm sm:text-base md:text-lg my-1 text-[#e4e4e4]">
                     {slide.description}
                   </p>
-                  <button className="w-[170px] text-sm cursor-pointer my-2 text-[14px] py-3 bg-green-600 text-white rounded-lg transition duration-200 hover:scale-[1.1]">
+                  <a
+                  href="tel:09333840658"
+                   className="w-[170px] text-sm cursor-pointer my-2 text-[14px] py-3 bg-green-600 text-white rounded-lg transition duration-200 hover:scale-[1.1]">
                     {slide.button}
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
