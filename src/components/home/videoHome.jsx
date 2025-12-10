@@ -1,5 +1,148 @@
+// "use client";
+
+// import { useRef, useState, useEffect } from "react";
+// import Image from "next/image";
+// import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+
+
+// export default function VideoCarousel() {
+//   const videoRef = useRef(null);
+
+//   const videos = [
+//     { id: 1, src: "/videos/1.mp4", title: "انیمیشن 1" },
+//     { id: 2, src: "/videos/1.mp4", title: "انیمیشن 2" },
+
+//   ];
+
+//   const [currentIndex, setCurrentIndex] = useState(0);
+//   const [isPlaying, setIsPlaying] = useState(false);
+//   const [progress, setProgress] = useState(0);
+//   const [isMuted, setIsMuted] = useState(true);
+
+//   const handlePlayPause = () => {
+//     const video = videoRef.current;
+//     if (!video) return;
+
+//     if (isPlaying) {
+//       video.pause();
+//       setIsPlaying(false);
+//     } else {
+//       video.play();
+//       setIsPlaying(true);
+//     }
+//   };
+
+//   const handleNext = () => {
+//     setCurrentIndex((prev) => (prev + 1) % videos.length);
+//     setIsPlaying(false);
+//     setProgress(0);
+//   };
+
+//   const handlePrev = () => {
+//     setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
+//     setIsPlaying(false);
+//     setProgress(0);
+//   };
+
+//   useEffect(() => {
+//     const video = videoRef.current;
+//     if (!video) return;
+
+//     const updateProgress = () => {
+//       if (video.duration) setProgress((video.currentTime / video.duration) * 100);
+//     };
+
+//     video.addEventListener("timeupdate", updateProgress);
+//     video.addEventListener("ended", () => setIsPlaying(false));
+
+//     return () => {
+//       video.removeEventListener("timeupdate", updateProgress);
+//       video.removeEventListener("ended", () => setIsPlaying(false));
+//     };
+//   }, [currentIndex]);
+
+//   return (
+//     <div className="relative w-full mt-20 flex flex-col items-center gap-4">
+//       <div className="
+//         relative 
+//         w-screen sm:w-full   /* فول‌عرض توی موبایل، عادی توی دسکتاپ */
+//         h-[65vh] sm:h-auto   /* ارتفاع داینامیک موبایل، aspect در دسکتاپ */
+//         sm:aspect-video
+//         bg-black rounded-none sm:rounded-xl 
+//         overflow-hidden
+//       ">
+//    <video
+//   ref={videoRef}
+//   src={videos[currentIndex].src}
+//   poster={`/videos/thumbnails/${videos[currentIndex].id}.jpg`} // عکس کاور
+//   className="absolute inset-0 w-full h-full object-cover"
+//   muted={isMuted}
+//   playsInline
+//   onClick={handlePlayPause}
+// />
+
+
+//         {!isPlaying && (
+//           <div className="absolute inset-0 bg-black/40 flex justify-center items-center z-10">
+//             <button
+//               onClick={handlePlayPause}
+//               className="bg-white/30 hover:bg-white/50 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center shadow-lg"
+//             >
+//               <Image src="/icons/play.svg" alt="Play" width={30} height={30} />
+//             </button>
+//           </div>
+//         )}
+
+//         <div className="absolute bottom-1 left-0 w-full h-1 bg-gray-700">
+//           <div
+//             className="h-full bg-green-500 transition-all"
+//             style={{ width: `${progress}%` }}
+//           ></div>
+//         </div>
+
+//         <button
+//           onClick={handlePrev}
+//           className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-2 rounded-full z-20"
+//         >
+          
+//               <ChevronLeft className="w-5 h-5 text-white"/>
+
+//                   </button>
+//         <button
+//           onClick={handleNext}
+//           className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-2 rounded-full z-20"
+//         >
+//               <ChevronRight className="w-5 h-5 text-white"/>
+//         </button>
+
+//         <div className="absolute bottom-2 right-2 flex gap-2 z-20">
+//           <button
+//             onClick={() => setIsMuted(!isMuted)}
+//             className="bg-white/20 hover:bg-white/40 p-2 rounded-full text-sm"
+//           >
+//             {isMuted ? "🔇" : "🔊"}
+//           </button>
+//           <button
+//             onClick={() => videoRef.current?.requestFullscreen()}
+//             className="bg-white/20 hover:bg-white/40 p-2 rounded-full text-sm"
+//           >
+//             ⛶
+//           </button>
+//         </div>
+
+//         <div className="absolute top-2 left-2 text-white font-bold bg-black/40 px-2 py-1 rounded text-sm truncate max-w-[95%]">
+//           {videos[currentIndex].title}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
 "use client";
 
+<<<<<<< HEAD
 import { useState, useRef, useEffect } from "react";
 import { Play, Pause, Volume2, VolumeX, SkipBack, SkipForward, Maximize } from "lucide-react";
 
@@ -10,6 +153,21 @@ const videos = [
 
 export default function VideoPlayer() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+=======
+import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+export default function VideoCarousel() {
+  const videoRef = useRef(null);
+
+  const videos = [
+    { id: 1, src: "/videos/1.mp4", title: "انیمیشن 1" },
+    { id: 2, src: "/videos/videoHome.mp4", title: "انیمیشن 2" },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+>>>>>>> 10dc4e9dbb197a9eeaa1a222c75fc51f3d4edb9d
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -95,11 +253,18 @@ export default function VideoPlayer() {
     const video = videoRef.current;
     if (!video) return;
 
+<<<<<<< HEAD
     const updateTime = () => setCurrentTime(video.currentTime);
     const updateDuration = () => setDuration(video.duration);
     const handleEnded = () => {
       setIsPlaying(false);
       nextVideo();
+=======
+    const updateProgress = () => {
+      if (video.duration) {
+        setProgress((video.currentTime / video.duration) * 100);
+      }
+>>>>>>> 10dc4e9dbb197a9eeaa1a222c75fc51f3d4edb9d
     };
 
     video.addEventListener("timeupdate", updateTime);
@@ -144,6 +309,7 @@ export default function VideoPlayer() {
   };
 
   return (
+<<<<<<< HEAD
     <div className="max-w-5xl mx-auto p-4">
       <div
         className="relative bg-black rounded-2xl overflow-hidden shadow-2xl group"
@@ -160,6 +326,43 @@ export default function VideoPlayer() {
         />
 
         {/* اورلی پخش */}
+=======
+    <div className="relative w-full mt-20 flex flex-col items-center gap-4">
+      <div
+        className="
+        relative 
+        w-screen sm:w-full
+        h-[65vh] sm:h-auto
+        sm:aspect-video
+        bg-black rounded-none sm:rounded-xl 
+        overflow-hidden
+      "
+      >
+        {/* ویدیو بک‌گراند (قبل از پلی شدن) */}
+        {!isPlaying && (
+          <video
+            src={videos[currentIndex].src}
+            className="absolute inset-0 w-full h-full object-cover"
+            muted
+            autoPlay
+            loop
+            playsInline
+          />
+        )}
+
+        {/* ویدیو اصلی (بعد از پلی شدن) */}
+        <video
+          ref={videoRef}
+          src={videos[currentIndex].src}
+          className="absolute inset-0 w-full h-full object-cover"
+          muted={isMuted}
+          playsInline
+          onClick={handlePlayPause}
+          style={{ display: isPlaying ? "block" : "none" }}
+        />
+
+        {/* دکمه پلی */}
+>>>>>>> 10dc4e9dbb197a9eeaa1a222c75fc51f3d4edb9d
         {!isPlaying && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/30">
             <button
@@ -171,6 +374,7 @@ export default function VideoPlayer() {
           </div>
         )}
 
+<<<<<<< HEAD
         {/* کنترل‌ها */}
         <div
           className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 transition-opacity duration-300 ${
@@ -182,6 +386,35 @@ export default function VideoPlayer() {
             ref={progressBarRef}
             onClick={handleProgressClick}
             className="w-full h-2 bg-gray-600 rounded-full cursor-pointer mb-4 group/progress"
+=======
+        {/* Progress Bar */}
+        <div className="absolute bottom-1 left-0 w-full h-1 bg-gray-700">
+          <div
+            className="h-full bg-green-500 transition-all"
+            style={{ width: `${progress}%` }}
+          ></div>
+        </div>
+
+        {/* دکمه‌های چپ و راست */}
+        <button
+          onClick={handlePrev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-2 rounded-full z-20"
+        >
+          <ChevronLeft className="w-5 h-5 text-white" />
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-2 rounded-full z-20"
+        >
+          <ChevronRight className="w-5 h-5 text-white" />
+        </button>
+
+        {/* کنترل صدا و فول‌اسکرین */}
+        <div className="absolute bottom-2 right-2 flex gap-2 z-20">
+          <button
+            onClick={() => setIsMuted(!isMuted)}
+            className="bg-white/20 hover:bg-white/40 p-2 rounded-full text-sm"
+>>>>>>> 10dc4e9dbb197a9eeaa1a222c75fc51f3d4edb9d
           >
             <div
               className="h-full bg-blue-600 rounded-full relative group-hover/progress:h-3 transition-all"
@@ -191,6 +424,7 @@ export default function VideoPlayer() {
             </div>
           </div>
 
+<<<<<<< HEAD
           <div className="flex items-center justify-between text-white">
             {/* سمت چپ: دکمه‌های کنترل */}
             <div className="flex items-center gap-4">
@@ -261,6 +495,11 @@ export default function VideoPlayer() {
               <Maximize className="w-5 h-5" />
             </button>
           </div>
+=======
+        {/* عنوان ویدیو */}
+        <div className="absolute top-2 left-2 text-white font-bold bg-black/40 px-2 py-1 rounded text-sm truncate max-w-[95%]">
+          {videos[currentIndex].title}
+>>>>>>> 10dc4e9dbb197a9eeaa1a222c75fc51f3d4edb9d
         </div>
       </div>
 
