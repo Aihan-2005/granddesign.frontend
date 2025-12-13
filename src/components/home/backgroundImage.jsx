@@ -36,6 +36,23 @@ export default function BackgroundImage() {
                 className="w-full h-full object-cover"
               />
 
+<<<<<<< HEAD
+              {/* متن روی هر اسلاید */}
+              <div className="absolute top-[43%] md:top-[50%] right-[10%] text-right w-[90%] md:w-[90%] h-[60%] md:h-[50%] flex justify-end items-start p-0 md:p-1 z-10">
+                <div>
+                  <p className="text-xl sm:text-3xl md:text-5xl my-1 text-white font-bold">
+                    {slide.title}
+                  </p>
+                  <p className="text-sm sm:text-base md:text-lg my-1 text-[#e4e4e4]">
+                    {slide.description}
+                  </p>
+                  <a
+                  href="tel:09333840658"
+                   className="w-[170px] text-sm cursor-pointer my-2 text-[14px] py-3 bg-green-600 text-white rounded-lg transition duration-200 hover:scale-[1.1]">
+                    {slide.button}
+                  </a>
+                </div>
+=======
               {/* متن روی تصویر */}
               <div className="absolute top-[45%] md:top-[42%] right-[8%] text-right flex flex-col items-end z-10">
                 <p
@@ -58,6 +75,7 @@ export default function BackgroundImage() {
                 >
                   {slide.button}
                 </button>
+>>>>>>> 10dc4e9dbb197a9eeaa1a222c75fc51f3d4edb9d
               </div>
             </div>
           </SwiperSlide>
