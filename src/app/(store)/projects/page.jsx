@@ -4,7 +4,7 @@ export default function ProjectPage(){
     return(
 
         <>
-        <Project/>
+        <Project />
         </>
     )
 }
