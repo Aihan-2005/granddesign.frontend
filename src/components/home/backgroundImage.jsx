@@ -1,19 +1,21 @@
 "use client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { PUBLIC_BASE } from "@/config/publicBase";
 
 export default function BackgroundImage() {
   const slides = [
     {
-      image: "/images/background11.jpg",
+      image: `${PUBLIC_BASE}/images/background11.jpg`,
       title: "خانه‌ای مدرن، رویایی و منحصر به‌فرد",
       description:
         "زیبایی و خلاقیت را با طراحی‌های خاص و تجربه‌ای فراتر از سبک‌های معمول لمس کن.",
       button: "همین اکنون شروع کنید",
     },
     {
-      image: "/images/background12.jpg",
+      image: `${PUBLIC_BASE}/images/background12.jpg`,
       title: "فروش ویژه طراحی و دکور خانه",
       description:
         "کالکشن منحصربه‌فرد وسایل تزئینی و کاربردی برای خلق فضایی پرانرژی و دل‌نشین.",
@@ -40,8 +42,10 @@ export default function BackgroundImage() {
 
               {/* متن روی اسلاید */}
               <div className="absolute top-[45%] md:top-[42%] right-[8%] text-right flex flex-col items-end z-10">
-                <p className="text-white font-bold drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]
-                  text-[24px] sm:text-[36px] md:text-[48px] leading-tight">
+                <p
+                  className="text-white font-bold drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]
+                  text-[24px] sm:text-[36px] md:text-[48px] leading-tight"
+                >
                   {slide.title}
                 </p>
 

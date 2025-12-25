@@ -1,6 +1,8 @@
 "use client";
+
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import { PUBLIC_BASE } from "@/config/publicBase";
 
 export default function BackgroundeAboutUs() {
   const { ref, inView } = useInView({
@@ -19,7 +21,9 @@ export default function BackgroundeAboutUs() {
     <section className="relative w-full my-32" dir="rtl">
       <div
         className="w-full h-[500px] md:h-[600px] bg-cover bg-center rounded-2xl relative flex items-center"
-        style={{ backgroundImage: "url('/images/background2.png')" }}
+        style={{
+          backgroundImage: `url('${PUBLIC_BASE}/images/background2.png')`,
+        }}
       >
         <div className="absolute inset-0 bg-black/40 rounded-2xl"></div>
 

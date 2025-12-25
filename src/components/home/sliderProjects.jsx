@@ -8,26 +8,27 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import Image from "next/image";
 import Link from "next/link";
+import { PUBLIC_BASE } from "@/config/publicBase";
 
 export default function SliderProjects() {
   const Images = [
-    { image: "/akhir/amlak-golstan/w1.jpg", text: "مشاور املاک", id: "1" },
-    { image: "/akhir/areshga-jfri/a.jpg", text: "سالن زیبایی", id: "2" },
-    { image: "/akhir/daftar froosh-astane-amozade/brnjj (2).jpg", text: "دفتر کار", id: "3" },
-    { image: "/akhir/jana-jafarpoor/1(1).jpg", text: "رستوران جانا", id: "4" },
-    { image: "/akhir/janbazan-kafe kamlia/1 (5).jpg", text: "کافه کاملیا", id: "5" },
-    { image: "/akhir/kargare 5, aqa bozorgi(9)/enhanced-image (26).jpg", text: "منزل آقابزرگی", id: "6" },
-    { image: "/akhir/kiashar-rahimzade/kiashar (11).jpg", text: "ویلای کیاشهر", id: "7" },
-    { image: "/akhir/nama khararod/hsniiiasl (11).jpg", text: "ویلای خرارود", id: "8" },
-    { image: "/akhir/nilass-lahijan/aslia (2).jpg", text: "ساختمان جانا", id: "9" },
-    { image: "/akhir/PENT/P5.jpg", text: "پنت هاوس هدایت", id: "10" },
-    { image: "/akhir/penttttt-bakhshi/b1.jpg", text: "سکوت سبز", id: "11" },
-    { image: "/akhir/sazesh-kargarrr/komdpsr (10).jpg", text: "ساختمان پرنیان", id: "12" },
-    { image: "/akhir/shohani-jangal3000/sh1.jpg", text: "خانه‌ای در میان درختان", id: "13" },
-    { image: "/akhir/siakal-vila-saeidi/saeidiii (9).jpg", text: "ویلای سیاهکل", id: "14" },
-    { image: "/akhir/VAHED/v2.jpg", text: "آپارتمان هدایت", id: "15" },
-    { image: "/akhir/vila jngl2000-mohamadi/2.jpg", text: "ویلای 3000", id: "16" },
-    { image: "/akhir/vila-saeidi-siakal/saeidiii (1).jpg", text: "ویلای سیاهکل (داخلی)", id: "17" },
+    { image: `${PUBLIC_BASE}/akhir/amlak-golstan/w1.jpg`, text: "مشاور املاک", id: "1" },
+    { image: `${PUBLIC_BASE}/akhir/areshga-jfri/a.jpg`, text: "سالن زیبایی", id: "2" },
+    { image: `${PUBLIC_BASE}/akhir/daftar froosh-astane-amozade/brnjj (2).jpg`, text: "دفتر کار", id: "3" },
+    { image: `${PUBLIC_BASE}/akhir/jana-jafarpoor/1(1).jpg`, text: "رستوران جانا", id: "4" },
+    { image: `${PUBLIC_BASE}/akhir/janbazan-kafe kamlia/1 (5).jpg`, text: "کافه کاملیا", id: "5" },
+    { image: `${PUBLIC_BASE}/akhir/kargare 5, aqa bozorgi(9)/enhanced-image (26).jpg`, text: "منزل آقابزرگی", id: "6" },
+    { image: `${PUBLIC_BASE}/akhir/kiashar-rahimzade/kiashar (11).jpg`, text: "ویلای کیاشهر", id: "7" },
+    { image: `${PUBLIC_BASE}/akhir/nama khararod/hsniiiasl (11).jpg`, text: "ویلای خرارود", id: "8" },
+    { image: `${PUBLIC_BASE}/akhir/nilass-lahijan/aslia (2).jpg`, text: "ساختمان جانا", id: "9" },
+    { image: `${PUBLIC_BASE}/akhir/PENT/P5.jpg`, text: "پنت هاوس هدایت", id: "10" },
+    { image: `${PUBLIC_BASE}/akhir/penttttt-bakhshi/b1.jpg`, text: "سکوت سبز", id: "11" },
+    { image: `${PUBLIC_BASE}/akhir/sazesh-kargarrr/komdpsr (10).jpg`, text: "ساختمان پرنیان", id: "12" },
+    { image: `${PUBLIC_BASE}/akhir/shohani-jangal3000/sh1.jpg`, text: "خانه‌ای در میان درختان", id: "13" },
+    { image: `${PUBLIC_BASE}/akhir/siakal-vila-saeidi/saeidiii (9).jpg`, text: "ویلای سیاهکل", id: "14" },
+    { image: `${PUBLIC_BASE}/akhir/VAHED/v2.jpg`, text: "آپارتمان هدایت", id: "15" },
+    { image: `${PUBLIC_BASE}/akhir/vila jngl2000-mohamadi/2.jpg`, text: "ویلای 3000", id: "16" },
+    { image: `${PUBLIC_BASE}/akhir/vila-saeidi-siakal/saeidiii (1).jpg`, text: "ویلای سیاهکل (داخلی)", id: "17" },
   ];
 
   const cardVariants = {
@@ -66,12 +67,12 @@ export default function SliderProjects() {
           768: { slidesPerView: 3 },
           1024: { slidesPerView: 4 },
         }}
-        grabCursor={true}
+        grabCursor
         modules={[Scrollbar]}
         className="mySwiper h-[280px] sm:h-[330px] md:h-[380px] lg:h-[420px]"
       >
         {Images.map((image, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={image.id}>
             <motion.div
               custom={index}
               initial="hidden"
@@ -90,10 +91,11 @@ export default function SliderProjects() {
                   height={300}
                   {...(index === 0 ? { priority: true } : { loading: "lazy" })}
                   alt={image.text}
+                  sizes="(max-width:640px) 90vw, (max-width:768px) 45vw, (max-width:1024px) 30vw, 25vw"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
                 />
 
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                   <motion.p

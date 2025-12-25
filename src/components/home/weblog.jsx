@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { PUBLIC_BASE } from "@/config/publicBase";
 
 export default function WeblogHome() {
   const Weblogs = [
@@ -9,13 +12,19 @@ export default function WeblogHome() {
   ];
 
   return (
-    <div className="w-full flex flex-col py-[40px] text-white" dir="rtl" id="blog">
-      <div className="w-full py-2 flex flex-col sm:flex-row justify-between items-center sm:items-center gap-4 px-4">
+    <div
+      className="w-full flex flex-col py-[40px] text-white"
+      dir="rtl"
+      id="blog"
+    >
+      <div className="w-full py-2 flex flex-col sm:flex-row justify-between items-center gap-4 px-4">
         <div className="w-full flex flex-col items-center sm:items-start text-center sm:text-right gap-4 px-4">
-          <p className="text-green-600 text-2xl sm:text-3xl w-full">  بخشی از رزومه و دستاوردهای ما
-</p>
-          <p className="text-black text-xl sm:text-3xl font-bold w-full sm:w-auto">  پروژه‌ها و تخصص‌های ما را بهتر بشناسید
-</p>
+          <p className="text-green-600 text-2xl sm:text-3xl w-full">
+            بخشی از رزومه و دستاوردهای ما
+          </p>
+          <p className="text-black text-xl sm:text-3xl font-bold w-full sm:w-auto">
+            پروژه‌ها و تخصص‌های ما را بهتر بشناسید
+          </p>
         </div>
       </div>
 
@@ -26,16 +35,21 @@ export default function WeblogHome() {
               {/* تصویر */}
               <div className="w-full h-48 sm:h-52 lg:h-56 relative">
                 <Image
-                  src={`/images/weblogs/image${item.image}.jpg`}
+                  src={`${PUBLIC_BASE}/images/weblogs/image${item.image}.jpg`}
                   alt={item.definition}
                   fill
+                  sizes="(max-width: 640px) 100vw,
+                         (max-width: 1024px) 50vw,
+                         33vw"
                   className="object-cover"
                 />
               </div>
 
               {/* متن */}
               <div className="mt-2 p-2 text-center sm:text-right h-16 flex items-center justify-center">
-                <p className="text-white text-sm sm:text-base">{item.definition}</p>
+                <p className="text-white text-sm sm:text-base">
+                  {item.definition}
+                </p>
               </div>
             </div>
           </Link>
