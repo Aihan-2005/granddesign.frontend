@@ -3,104 +3,43 @@ import Header from "./../Headers";
 import { Plus, Heart } from "lucide-react";
 import { useCartStore } from "@/zustand/cartStore";
 import { motion, AnimatePresence } from "framer-motion";
-import { useWishlistStore } from "@/zustand/favoritesStore"; 
+import { useWishlistStore } from "@/zustand/favoritesStore";
+import { forwardRef } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { getProducts, getSpecialProducts } from "@/apis/products";
 
-const specialProducts = [
-  {
-    id: 101, 
-    name: "قرنیز ویژه",
-    price: 650000,
-    image: "/images/products/thermowall-skywalls1.jpg",
-    description: "قرنیز مرغوب با طراحی ویژه"
-  },
-  {
-    id: 102, 
-    name: "پارکت لوکس",
-    price: 850000,
-    image: "/images/products/thermowall-skywalls1.jpg",
-    description: "پارکت درجه یک با گارانتی 10 ساله"
-  },
-  {
-    id: 103, 
-    name: "کاغذ دیواری طرح دار",
-    price: 750000,
-    image: "/images/products/thermowall-skywalls1.jpg",
-    description: "کاغذ دیواری ضد آب و ضد خش"
-  }
-];
-
-const allProducts = [
-  {
-    id: 1, 
-    name: "پارکت",
-    price: 500000,
-    image: "/images/products/parket1.jpg",
-    description: "توضیحات محصول"
-  },
-  {
-    id: 2, 
-    name: "کاغذ دیواری",
-    price: 500000,
-    image: "/images/products/wallpaper.jpg",
-    description: "توضیحات محصول"
-  },
-  {
-    id: 3, 
-    name: "قرنیز",
-    price: 500000,
-    image: "/images/products/garniz2.jpg",
-    description: "توضیحات محصول"
-  },
-  {
-    id: 4, 
-    name: "کف پوش",
-    price: 500000,
-    image: "/images/products/parket.jpg",
-    description: "توضیحات محصول"
-  },
-  {
-    id: 5, 
-    name: "PVC",
-    price: 500000,
-    image: "/images/products/PVC.jpg",
-    description: "توضیحات محصول"
-  },
-  {
-    id: 6, 
-    name: "ماربل",
-    price: 500000,
-    image: "/images/products/marble.jpg",
-    description: "توضیحات محصول"
-  },
-];
-
-const ProductCard = ({ product }) => {
+const ProductCard = forwardRef(({ product, isActive }, ref) => {
   const { addItem, items } = useCartStore();
-  const { toggleWishlistItem, wishlistItems } = useWishlistStore(); 
-  
-  const itemInCart = items.find(item => item.id === product.id);
+  const { toggleWishlistItem, wishlistItems } = useWishlistStore();
+
+  const itemInCart = items.find((item) => item.id === product.id);
   const quantity = itemInCart?.quantity || 0;
 
-  const isFavorite = wishlistItems.find(item => item.id === product.id);
+  const isFavorite = wishlistItems.find((item) => item.id === product.id);
 
   return (
-    <motion.div 
-      className="border rounded p-4 shadow hover:shadow-lg transition relative" 
+    <motion.div
+      ref={ref}
+      className={`border rounded p-4 shadow hover:shadow-lg transition relative ${
+        isActive ? "ring-3 ring-green-500" : ""
+      }`}
       whileHover={{ y: -5 }}
     >
-     
       <motion.button
-        onClick={() => toggleWishlistItem(product)} 
+        onClick={() => toggleWishlistItem(product)}
         className="absolute top-3 left-3 z-10 p-2 bg-white rounded-full shadow-md"
         whileTap={{ scale: 0.9 }}
-        aria-label={isFavorite ? "حذف از علاقه‌مندی‌ها" : "افزودن به علاقه‌مندی‌ها"}
+        aria-label={
+          isFavorite ? "حذف از علاقه‌مندی‌ها" : "افزودن به علاقه‌مندی‌ها"
+        }
       >
-        <Heart 
-          size={20} 
-          className={isFavorite ? "fill-red-500 text-red-500" : "text-gray-400"} 
+        <Heart
+          size={20}
+          className={isFavorite ? "fill-red-500 text-red-500" : "text-gray-400"}
         />
       </motion.button>
-      
+
       <div className="relative overflow-hidden rounded-lg mb-4 h-48">
         <motion.img
           src={product.image}
@@ -130,10 +69,12 @@ const ProductCard = ({ product }) => {
             w-10 h-10
             text-white
             rounded-full
-            ${quantity > 0 ? 'bg-green-700' : 'bg-green-600 hover:bg-green-700'}
+            ${quantity > 0 ? "bg-green-700" : "bg-green-600 hover:bg-green-700"}
           `}
           whileTap={{ scale: 0.9 }}
-          aria-label={quantity > 0 ? `${quantity} عدد در سبد` : "افزودن به سبد خرید"}
+          aria-label={
+            quantity > 0 ? `${quantity} عدد در سبد` : "افزودن به سبد خرید"
+          }
         >
           <AnimatePresence mode="wait">
             {quantity > 0 ? (
@@ -161,9 +102,40 @@ const ProductCard = ({ product }) => {
       </div>
     </motion.div>
   );
-};
+});
 
 export default function FirstProduct() {
+  const searchParams = useSearchParams();
+  const [activeProductId, setActiveProductId] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [specialProductsList, setSpecialProductsList] = useState([]);
+  const productRefs = useRef({});
+
+  useEffect(() => {
+    // Load data (mock or API)
+    async function loadData() {
+      const all = await getProducts();
+      const special = await getSpecialProducts();
+      setProducts(all);
+      setSpecialProductsList(special);
+    }
+    loadData();
+  }, []);
+
+  useEffect(() => {
+    const productId = searchParams.get("product");
+    if (productId) {
+      const id = parseInt(productId);
+      setActiveProductId(id);
+      setTimeout(() => {
+        const ref = productRefs.current[id];
+        if (ref) {
+          ref.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 100); // Small delay to ensure DOM is ready
+    }
+  }, [searchParams]);
+
   return (
     <>
       <Header />
@@ -177,13 +149,14 @@ export default function FirstProduct() {
         <h1 className="text-2xl font-semibold text-right mb-5">
           محصولات ویژه ما
         </h1>
-       
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {specialProducts.map((product) => (
-            <ProductCard 
-              key={product.id} 
-              product={product} 
-              isFeatured={true}
+          {specialProductsList.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              isActive={activeProductId === product.id}
+              ref={(el) => (productRefs.current[product.id] = el)}
             />
           ))}
         </div>
@@ -193,8 +166,13 @@ export default function FirstProduct() {
         </section>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-          {allProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              isActive={activeProductId === product.id}
+              ref={(el) => (productRefs.current[product.id] = el)}
+            />
           ))}
         </div>
       </section>
