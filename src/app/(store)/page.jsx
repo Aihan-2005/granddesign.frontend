@@ -8,7 +8,6 @@ export default function Page(){
     const {count} = useTestStore()
     return (
         <>
-        <div>{count}</div>
          <div><HomePage/></div>
          </>
     )
