@@ -10,10 +10,19 @@ import {
   SkipForward,
   Maximize,
 } from "lucide-react";
+import { PUBLIC_BASE } from "@/config/publicBase";
 
 const videos = [
-  { id: 1, src: "/videos/1.mp4", title: "انیمیشن 1" },
-  { id: 2, src: "/videos/videoHome.mp4", title: "انیمیشن 2" },
+  {
+    id: 1,
+    src: `${PUBLIC_BASE}/videos/1.mp4`,
+    title: "انیمیشن 1",
+  },
+  {
+    id: 2,
+    src: `${PUBLIC_BASE}/videos/videoHome.mp4`,
+    title: "انیمیشن 2",
+  },
 ];
 
 export default function VideoHome() {
@@ -29,7 +38,6 @@ export default function VideoHome() {
   const [duration, setDuration] = useState(0);
   const [showControls, setShowControls] = useState(true);
 
-  /* ----------------- Controls ----------------- */
 
   const togglePlayPause = () => {
     const video = videoRef.current;
@@ -79,7 +87,6 @@ export default function VideoHome() {
     }
   };
 
-  /* ----------------- Progress ----------------- */
 
   const onProgressClick = (e) => {
     if (!progressBarRef.current || !videoRef.current) return;
@@ -88,7 +95,6 @@ export default function VideoHome() {
     videoRef.current.currentTime = ratio * duration;
   };
 
-  /* ----------------- Effects ----------------- */
 
   useEffect(() => {
     const video = videoRef.current;
@@ -119,7 +125,6 @@ export default function VideoHome() {
     }
   }, [currentIndex]);
 
-  /* ----------------- UI helpers ----------------- */
 
   const formatTime = (t) => {
     if (isNaN(t)) return "00:00";
@@ -138,7 +143,6 @@ export default function VideoHome() {
     }, 2500);
   };
 
-  /* ----------------- JSX ----------------- */
 
   return (
     <div className="max-w-5xl mx-auto mt-20">
@@ -166,13 +170,11 @@ export default function VideoHome() {
           </div>
         )}
 
-        {/* Controls */}
         <div
           className={`absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/90 to-transparent transition-opacity ${
             showControls ? "opacity-100" : "opacity-0"
           }`}
         >
-          {/* Progress */}
           <div
             ref={progressBarRef}
             onClick={onProgressClick}

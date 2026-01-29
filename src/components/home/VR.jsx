@@ -5,7 +5,7 @@ import { Rotate3d, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-const PUBLIC_BASE = process.env.NEXT_PUBLIC_BASE_URL || "";
+import { PUBLIC_BASE } from "@/config/publicBase";
 
 const projects = [
   {
@@ -83,7 +83,7 @@ const projects = [
 ];
 
 export default function VR360() {
-  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const sliderRef = useRef(null);
 
   const scroll = (dir) => {
     if (sliderRef.current) {

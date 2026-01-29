@@ -1,10 +1,10 @@
-import Resume from "./[id]/page";
+// import Resume from "./[id]/page";
 
-export default function ProjectPage(){
-    return(
+// export default function ProjectPage(){
+//     return(
 
-        <>
-        <Resume/>
-        </>
-    )
-}
+//         <>
+//         <Resume/>
+//         </>
+//     )
+// }
