@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { PUBLIC_BASE } from "@/config/publicBase";
+import { FaInstagram, FaTelegramPlane, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 export default function Footer() {
   const [number, setNumber] = useState("");
@@ -50,7 +50,7 @@ export default function Footer() {
   return (
     <div>
       <footer
-        className="bg-black mt-[10px] text-gray-300 py-3 px-6 w-full mx-auto grid 
+        className="bg-black mt-[10px] text-gray-300 py-6 px-6 w-full mx-auto grid 
         grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center 
         items-center text-center md:text-start"
       >
@@ -66,7 +66,7 @@ export default function Footer() {
               placeholder="شمارتو وارد کن"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
-              className="bg-gray-800 border border-gray-600 rounded-md px-12 py-1 
+              className="bg-gray-800 border border-gray-600 rounded-md px-4 py-1 
               h-[50px] w-[200px] text-gray-200 placeholder-gray-500 
               focus:outline-none focus:border-green-500"
             />
@@ -89,20 +89,20 @@ export default function Footer() {
             </p>
           )}
 
-          <div className="flex items-center ml-10">
+          <div className="flex items-center justify-center mt-4">
             <Image
               src={`${PUBLIC_BASE}/images/20241027_175739_0000.png`}
-              alt="لوگو آرمان هوم"
-              width={240}
-              height={240}
-              sizes="240px"
-              className="w-60 h-60"
+              alt="لوگو گرند دیزاین"
+              width={220}
+              height={220}
+              sizes="220px"
+              className="w-56 h-56 object-contain"
             />
           </div>
         </div>
 
         {/* درباره ما */}
-        <div className="md:mt-[-60px] text-center">
+        <div className="md:mt-[-40px] text-center">
           <h3 className="text-white font-semibold text-lg mb-4">
             درباره گرند دیزاین
           </h3>
@@ -112,7 +112,7 @@ export default function Footer() {
           </p>
           <br />
           <p>
-            اگر می‌خواهید محیط خود را تغییر دهید به تیم حرفه‌ای ما بسپارید
+            اگر می‌خواهید محیط خود را تغییر دهید، به تیم حرفه‌ای ما بسپارید
           </p>
         </div>
 
@@ -123,20 +123,34 @@ export default function Footer() {
           </h3>
 
           <div className="text-sm space-y-4">
+            {/* شماره تماس */}
+            <div className="flex items-center gap-2">
+              <FaPhoneAlt className="text-green-500" />
+              <p className="font-semibold">تماس:</p>
+              <a
+                href="tel:09333840658"
+                className="text-gray-300 hover:text-green-500 transition"
+              >
+                ۰۹۳۳۳۸۴۰۶۵۸
+              </a>
+            </div>
+
+            {/* ایمیل */}
             <div className="flex items-center gap-2">
               <p className="font-semibold">ایمیل:</p>
               <a
                 href="mailto:granddesign.ay@gmail.com"
-                className="text-gray-300 hover:text-green-600 transition"
+                className="text-gray-300 hover:text-green-500 transition"
               >
                 granddesign.ay@gmail.com
               </a>
             </div>
 
+            {/* آدرس */}
             <div>
               <p className="font-semibold mb-1">آدرس:</p>
               <p>
-                لاهیجان میدان دانشگاه آزاد - بلوار دانشجو (۴۵ متری)
+                لاهیجان، میدان دانشگاه آزاد – بلوار دانشجو (۴۵ متری)  
                 دفتر طراحی گرند دیزاین
               </p>
             </div>
@@ -145,36 +159,39 @@ export default function Footer() {
       </footer>
 
       {/* شبکه‌های اجتماعی */}
-      <div className="flex justify-center items-center gap-3 bg-black pb-6">
+      <div className="flex justify-center items-center gap-4 bg-black pb-6">
         <a
           href="https://instagram.com/granddesign._"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center hover:bg-gray-600 transition"
+          className="w-11 h-11 rounded-full bg-green-500 text-white 
+          flex items-center justify-center hover:bg-green-600 transition"
         >
-          Instagram
+          <FaInstagram size={22} />
         </a>
 
         <a
           href="https://t.me/granddesignnn"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center hover:bg-gray-600 transition"
+          className="w-11 h-11 rounded-full bg-green-500 text-white 
+          flex items-center justify-center hover:bg-green-600 transition"
         >
-          Telegram
+          <FaTelegramPlane size={22} />
         </a>
 
         <a
           href="https://wa.me/09333840658"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center hover:bg-gray-600 transition"
+          className="w-11 h-11 rounded-full bg-green-500 text-white 
+          flex items-center justify-center hover:bg-green-600 transition"
         >
-          WhatsApp
+          <FaWhatsapp size={22} />
         </a>
       </div>
 
-      <p className="text-center text-green-600 bg-black pb-4">
+      <p className="text-center text-green-600 bg-black pb-4 text-sm">
         ساخته شده با ♥️ توسط <span className="font-semibold">استارتاپ وایزر</span>
       </p>
     </div>
