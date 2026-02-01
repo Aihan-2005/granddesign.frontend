@@ -3,19 +3,21 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { PUBLIC_BASE } from "@/config/publicBase";
+const PUBLIC_BASE = process.env.NEXT_PUBLIC_BASE  || '' ;
+
+
 
 export default function BackgroundImage() {
   const slides = [
     {
-      image: `${PUBLIC_BASE}/images/background11.jpg`,
+      image: `http://ftp.granddesign.ir/images/background11.jpg`,
       title: "خانه‌ای مدرن، رویایی و منحصر به‌فرد",
       description:
         "زیبایی و خلاقیت را با طراحی‌های خاص و تجربه‌ای فراتر از سبک‌های معمول لمس کن.",
       button: "همین اکنون شروع کنید",
     },
     {
-      image: `${PUBLIC_BASE}/images/background12.jpg`,
+      image: `http://ftp.granddesign.ir/images/background12.jpg`,
       title: "فروش ویژه طراحی و دکور خانه",
       description:
         "کالکشن منحصربه‌فرد وسایل تزئینی و کاربردی برای خلق فضایی پرانرژی و دل‌نشین.",

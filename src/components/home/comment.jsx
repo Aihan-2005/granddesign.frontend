@@ -37,7 +37,7 @@ export default function Team() {
   const member = teamMembers[index];
 
   return (
-    <div className="mt-24 mb-32"> {/* فاصله از بالا کم + فاصله از پایین زیاد */}
+    <div className="mt-24 mb-32"> 
       <h1 className="text-white text-center text-3xl font-bold">
         نظرات دیگران درباره ما
       </h1>

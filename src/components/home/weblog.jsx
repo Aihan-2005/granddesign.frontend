@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { PUBLIC_BASE } from "@/config/publicBase";
+// import { PUBLIC_BASE } from "@/config/publicBase";
 
 export default function WeblogHome() {
   const Weblogs = [
@@ -32,10 +32,9 @@ export default function WeblogHome() {
         {Weblogs.map((item) => (
           <Link key={item.id} href={`/resume/${item.id}`}>
             <div className="w-full flex flex-col items-center cursor-pointer bg-gray-500 rounded-lg overflow-hidden h-full">
-              {/* تصویر */}
               <div className="w-full h-48 sm:h-52 lg:h-56 relative">
                 <Image
-                  src={`${PUBLIC_BASE}/images/weblogs/image${item.image}.jpg`}
+                  src={`http://ftp.granddesign.ir/images/weblogs/image${item.image}.jpg`}
                   alt={item.definition}
                   fill
                   sizes="(max-width: 640px) 100vw,
@@ -45,7 +44,6 @@ export default function WeblogHome() {
                 />
               </div>
 
-              {/* متن */}
               <div className="mt-2 p-2 text-center sm:text-right h-16 flex items-center justify-center">
                 <p className="text-white text-sm sm:text-base">
                   {item.definition}

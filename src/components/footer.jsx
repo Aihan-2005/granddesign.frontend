@@ -91,7 +91,7 @@ export default function Footer() {
 
           <div className="flex items-center justify-center mt-4">
             <Image
-              src={`${PUBLIC_BASE}/images/20241027_175739_0000.png`}
+              src={`http://ftp.granddesign.ir/images/20241027_175739_0000.png`}
               alt="لوگو گرند دیزاین"
               width={220}
               height={220}
@@ -197,3 +197,4 @@ export default function Footer() {
     </div>
   );
 }
+///...
