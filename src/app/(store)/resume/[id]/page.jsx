@@ -12,14 +12,15 @@ const resumes = {
 };
 
 export default function ResumeDetailPage({ params }) {
-  const resolvedParams = use(params);
-  const resumeId = Number(resolvedParams.id);
+  
+  if(params) {
+    const resumeId = Number(params.id);
+    const ResumeComponent = resumes[resumeId];
 
-  const ResumeComponent = resumes[resumeId];
+    return <ResumeComponent></ResumeComponent>
 
-  return ResumeComponent ? (
-    <ResumeComponent />
-  ) : (
-    <p className="text-white text-center mt-12">صفحه پیدا نشد</p>
-  );
+  }
+
+  return <p className="text-white text-center mt-12">صفحه پیدا نشد</p>
+  
 }
