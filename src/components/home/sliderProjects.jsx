@@ -47,11 +47,11 @@ export default function SliderProjects() {
 
   return (
     <div className="py-16 mt-20 text-white" dir="rtl">
-      <div className="w-full text-center space-y-2 mb-10">
-        <p className="text-teal-500 text-5xl sm:text-6xl font-extrabold drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
+      <div className="w-full text-center space-y-3 mb-12 px-4">
+        <p className="text-teal-500 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)] leading-tight">
           هر پروژه، روایتی از خلاقیت و اصالت
         </p>
-        <p className="text-gray-300 text-2xl sm:text-3xl font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+        <p className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] leading-relaxed">
           از گرند دیزاین تا تحقق رؤیاهای معماری
         </p>
       </div>
@@ -61,15 +61,15 @@ export default function SliderProjects() {
         slidesPerView={4}
         spaceBetween={20}
         breakpoints={{
-          0: { slidesPerView: 1.2 },
-          480: { slidesPerView: 1.5 },
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
+          0: { slidesPerView: 1.3, spaceBetween: 16 },
+          480: { slidesPerView: 1.6, spaceBetween: 18 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          768: { slidesPerView: 3, spaceBetween: 20 },
+          1024: { slidesPerView: 4, spaceBetween: 20 },
         }}
         grabCursor
         modules={[Scrollbar]}
-        className="mySwiper h-[280px] sm:h-[330px] md:h-[380px] lg:h-[420px]"
+        className="mySwiper h-[340px] sm:h-[360px] md:h-[400px] lg:h-[420px]"
       >
         {Images.map((image, index) => (
           <SwiperSlide key={image.id}>
@@ -102,7 +102,7 @@ export default function SliderProjects() {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="text-teal-300 text-2xl sm:text-3xl font-extrabold tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                    className="text-teal-300 text-xl sm:text-2xl md:text-3xl font-extrabold tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] px-4 text-center"
                   >
                     {image.text}
                   </motion.p>
