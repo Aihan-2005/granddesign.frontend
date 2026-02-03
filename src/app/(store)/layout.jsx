@@ -1,7 +1,19 @@
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
+import AI from "@/components/home/AI"; 
+
+
 export default function LayoutHome({children}){
     return (
         <>
-         {children}
+  
+            <Navbar />  
+             {children}
+             <AI/>
+             <Footer />
+         
+
+        
         </>
     )
 }
