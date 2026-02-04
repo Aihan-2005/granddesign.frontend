@@ -93,7 +93,7 @@ export default function Navbar() {
           className="transition-transform duration-300 hover:scale-110 cursor-pointer"
         >
           <Image
-            src={`${PUBLIC_BASE}/images/20241027_175834.png`}
+            src={`http://ftp.granddesign.ir/images/20241027_175834.png`}
             alt="لوگو آرمان هوم"
             width={60}
             height={60}

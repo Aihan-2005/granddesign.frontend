@@ -132,7 +132,7 @@ export default function Resume1() {
     <div className="w-full min-h-screen bg-gray-900 text-white py-12 px-6" dir="rtl">
       <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
         <div className="text-right mt-5">
-          <h1 className="text-3xl sm:text-4xl font-bold">داخلی و دکراسیون</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold">داخلی و دکوراسیون</h1>
           <p className="mt-2 text-gray-300 text-sm sm:text-base max-w-xl">
             خانه جایی است که بیشترین زمان زندگی‌مان را در آن سپری می‌کنیم.  
             با طراحی داخلی حرفه‌ای ما، هر لحظه حضور در خانه‌تان به تجربه‌ای دلنشین و متفاوت تبدیل می‌شود.
