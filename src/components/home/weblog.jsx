@@ -34,7 +34,7 @@ export default function WeblogHome() {
             <div className="w-full flex flex-col items-center cursor-pointer bg-gray-500 rounded-lg overflow-hidden h-full">
               <div className="w-full h-48 sm:h-52 lg:h-56 relative">
                 <Image
-                  src={`http://ftp.granddesign.ir/images/weblogs/image${item.image}.jpg`}
+                  src={`https://ftp.granddesign.ir/images/weblogs/image${item.image}.jpg`}
                   alt={item.definition}
                   fill
                   sizes="(max-width: 640px) 100vw,
