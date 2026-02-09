@@ -41,7 +41,7 @@ import "./globals.css";
 
 export const metadata = {
   title: {
-    default: "گراند دیزاین | طراحی سایت و برندینگ در لاهیجان",
+    default: "گراند دیزاین | شرکت طراحی و معماری خانه",
     template: "%s | گراند دیزاین",
   },
 

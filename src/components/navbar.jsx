@@ -93,7 +93,7 @@ export default function Navbar() {
           className="transition-transform duration-300 hover:scale-110 cursor-pointer"
         >
           <Image
-            src={`http://ftp.granddesign.ir/images/20241027_175834.png`}
+            src={`https://ftp.granddesign.ir/images/20241027_175834.png`}
             alt="لوگو آرمان هوم"
             width={60}
             height={60}
@@ -156,7 +156,6 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* Overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/30 z-40 md:hidden"

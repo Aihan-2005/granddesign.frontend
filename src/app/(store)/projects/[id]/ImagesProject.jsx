@@ -15,11 +15,11 @@ import { PUBLIC_BASE } from "@/config/publicBase"
         ]
       },
       2: {
-        basePath: "http://ftp.granddesign.ir/akhir/areshga-jfri",
+        basePath: "https://ftp.granddesign.ir/akhir/areshga-jfri",
         images: ["a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg", "f.jpg", "hh.jpg"]
       },
       3: {
-        basePath: "http://ftp.granddesign.ir/akhir/daftar froosh-astane-amozade",
+        basePath: "https://ftp.granddesign.ir/akhir/daftar froosh-astane-amozade",
         images: [
           "brnjj (2).jpg", "brnjj (3).jpg", "brnjj (4).jpg",
           "brnjj (5).jpg", "brnjj (6).jpg", "brnjj (7).jpg",
@@ -27,7 +27,7 @@ import { PUBLIC_BASE } from "@/config/publicBase"
         ]
       },
       4: {
-        basePath: "http://ftp.granddesign.ir/akhir/jana-jafarpoor",
+        basePath: "https://ftp.granddesign.ir/akhir/jana-jafarpoor",
         images: [
           "1(1).jpg", "11(1).jpg", "3(1).jpg", "5(1).jpg", "8(1).jpg",
           "cofjan (1).jpg",  "cofjnaaaa (6).jpg",
@@ -35,14 +35,14 @@ import { PUBLIC_BASE } from "@/config/publicBase"
         ]
       },
       5: {
-        basePath: "http://ftp.granddesign.ir/akhir/janbazan-kafe kamlia",
+        basePath: "https://ftp.granddesign.ir/akhir/janbazan-kafe kamlia",
         images: [
           "1 (5).jpg","2 (6).jpg","3 (4).jpg","4 (2).jpg","5 (3).jpg","6 (3).jpg","7 (2).jpg",
           "8.jpg"
         ]
       },
       6: {
-        basePath: "http://ftp.granddesign.ir/akhir/kargare 5, aqa bozorgi(9)",
+        basePath: "https://ftp.granddesign.ir/akhir/kargare 5, aqa bozorgi(9)",
         images: [
           "enhanced-image (26).jpg","enhanced-image (29).jpg","enhanced-image (32).jpg",
           "enhanced-image (33).jpg","enhanced-image (34).jpg","enhanced-image (35).jpg",
@@ -50,14 +50,14 @@ import { PUBLIC_BASE } from "@/config/publicBase"
         ]
       },
       7: {
-        basePath: "http://ftp.granddesign.ir/akhir/kiashar-rahimzade",
+        basePath: "https://ftp.granddesign.ir/akhir/kiashar-rahimzade",
         images: [
           "kiashar (11).jpg","kiashar (12).jpg","kiashar (3).jpg","kiashar (4).jpg",
           "kiashar (6).jpg","kiashar (8).jpg","kiashar (9).jpg"
         ]
       },
       8: {
-        basePath: "http://ftp.granddesign.ir/akhir/nama khararod",
+        basePath: "https://ftp.granddesign.ir/akhir/nama khararod",
         images: [
           "hsniiiasl (11).jpg","hsniiiasl (12).jpg","hsniiiasl (14).jpg",
           "hsniiiasl (15).jpg","hsniiiasl (2).jpg","hsniiiasl (4).jpg",
@@ -65,26 +65,26 @@ import { PUBLIC_BASE } from "@/config/publicBase"
         ]
       },
       9: {
-        basePath: "http://ftp.granddesign.ir/akhir/nilass-lahijan",
+        basePath: "https://ftp.granddesign.ir/akhir/nilass-lahijan",
         images: [
           "aslia (2).jpg","aslia (5).jpg","aslia (6).jpg","nmjanan (1).jpg",
           "nmjanan (12).jpg","nmjanan (3).jpg"
         ]
       },
       10: {
-        basePath: "http://ftp.granddesign.ir/akhir/PENT",
+        basePath: "https://ftp.granddesign.ir/akhir/PENT",
         images: [
           "P5.jpg","P6.jpg","p8.jpg","p9.jpg","pt1.jpg","pt2.jpg","pt3.jpg"
         ]
       },
       11: {
-        basePath: "http://ftp.granddesign.ir/akhir/penttttt-bakhshi",
+        basePath: "https://ftp.granddesign.ir/akhir/penttttt-bakhshi",
         images: [
           "b1.jpg","b2.jpg","b3.jpg","b4.jpg","b5.jpg"
         ]
       },
       12: {
-        basePath: "http://ftp.granddesign.ir/akhir/sazesh-kargarrr",
+        basePath: "https://ftp.granddesign.ir/akhir/sazesh-kargarrr",
         images: [
           "komdpsr (10).jpg","komdpsr (4).jpg","komdpsr (8).jpg","komod azad.jpg",
           "mastar a.jpg","master b.jpg","master1.jpg","mat1.jpg","mtbkh (2).jpg",
@@ -92,34 +92,34 @@ import { PUBLIC_BASE } from "@/config/publicBase"
         ]
       },
       13: {
-        basePath: "http://ftp.granddesign.ir/akhir/shohani-jangal3000",
+        basePath: "https://ftp.granddesign.ir/akhir/shohani-jangal3000",
         images: [
           "sh1.jpg","sh2.jpg","sh3.jpg","sh4.jpg","sh5.jpg","sh5.jpg","sh6.jpg",
           "sh7.jpg","sh8.jpg"
         ]
       },
       14: {
-        basePath: "http://ftp.granddesign.ir/akhir/siakal-vila-saeidi",
+        basePath: "https://ftp.granddesign.ir/akhir/siakal-vila-saeidi",
         images: [
           "saei.jpg","saeidiii (7).jpg","saeidiii (9).jpg","trtrtr (2).jpg","trtrtr (3).jpg",
           "trtrtr (5).jpg"
         ]
       },
       15: {
-        basePath: "http://ftp.granddesign.ir/akhir/VAHED",
+        basePath: "https://ftp.granddesign.ir/akhir/VAHED",
         images: [
           "v2.jpg","v3.jpg","v4.jpg","v6.jpg","v9.jpg","va (1).jpg","va (2).jpg",
           "va (3).jpg","va (5).jpg","vo5.jpg","vo6.jpg"
         ]
       },
       16: {
-        basePath: "http://ftp.granddesign.ir/akhir/vila jngl2000-mohamadi",
+        basePath: "https://ftp.granddesign.ir/akhir/vila jngl2000-mohamadi",
         images: [
         "2.jpg","4.jpg","6.jpg","7.jpg","8.jpg","9.jpg","aa.jpg","bb.jpg"
         ]
       },
       17: {
-        basePath: "http://ftp.granddesign.ir/akhir/vila-saeidi-siakal",
+        basePath: "https://ftp.granddesign.ir/akhir/vila-saeidi-siakal",
         images: [
           "saeidiii (1).jpg","saeidiii (15).jpg","saeidiii (16).jpg","saeidiii (2).jpg",
           "saeidiii (3).jpg","saeidiii (4).jpg"

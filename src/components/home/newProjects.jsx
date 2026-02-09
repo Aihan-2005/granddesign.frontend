@@ -8,39 +8,39 @@ export default function NewProjectsHome() {
   const data = [
     {
       text: "طراحی نمای ساختمان",
-      icon: `http://ftp.granddesign.ir/images/newprojects/icons8-building-80.png`,
+      icon: `https://ftp.granddesign.ir/images/newprojects/icons8-building-80.png`,
     },
     {
       text: "طراحی داخلی ساختمان",
-      icon: `http://ftp.granddesign.ir/images/newprojects/icons8-room-64.png`,
+      icon: `https://ftp.granddesign.ir/images/newprojects/icons8-room-64.png`,
     },
     {
       text: "طراحی کابینت",
-      icon: `http://ftp.granddesign.ir/images/newprojects/icons8-cabinet-64.png`,
+      icon: `https://ftp.granddesign.ir/images/newprojects/icons8-cabinet-64.png`,
     },
     {
       text: "طراحی محوطه و حیاط",
-      icon: `http://ftp.granddesign.ir/images/newprojects/icons8-inland-50.png`,
+      icon: `https://ftp.granddesign.ir/images/newprojects/icons8-inland-50.png`,
     },
     {
       text: "دکوراسیون",
-      icon: `http://ftp.granddesign.ir/images/newprojects/icons8-home-decoration-64.png`,
+      icon: `https://ftp.granddesign.ir/images/newprojects/icons8-home-decoration-64.png`,
     },
     {
       text: "پیمانکاری نظارت و اجرا",
-      icon: `http://ftp.granddesign.ir/images/newprojects/icons8-administration-64.png`,
+      icon: `https://ftp.granddesign.ir/images/newprojects/icons8-administration-64.png`,
     },
     {
       text: "تور مجازی vr360",
-      icon: `http://ftp.granddesign.ir/images/newprojects/icons8-vr-100.png`,
+      icon: `https://ftp.granddesign.ir/images/newprojects/icons8-vr-100.png`,
     },
     {
       text: "انیمیشن و کلیپ",
-      icon: `http://ftp.granddesign.ir/images/newprojects/icons8-clip-96.png`,
+      icon: `https://ftp.granddesign.ir/images/newprojects/icons8-clip-96.png`,
     },
     {
       text: "از فکر و ایده تا کلید",
-      icon: `http://ftp.granddesign.ir/images/newprojects/icons8-idea-80.png`,
+      icon: `https://ftp.granddesign.ir/images/newprojects/icons8-idea-80.png`,
     },
   ];
 
