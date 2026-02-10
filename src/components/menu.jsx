@@ -14,7 +14,6 @@ export default function Menu() {
         opacity-30 z-40 md:hidden"
           onClick={closeMenu}></div>
       )}
-      {/* slidebar-سایز موبایل */}
       <div className={`fixed top-0 right-0 w-64 bg-gray-500 text-black shadow-lg md:hidden
         transform transition-transform duration-300 z-50 h-screen p-4
         overflow-y-auto -translate-x-full dark:bg-[#4e4e4e]   ${isOpen ? "translate-x-0" :

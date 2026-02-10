@@ -22,7 +22,7 @@ export default function BackgroundeAboutUs() {
       <div
         className="w-full h-[500px] md:h-[600px] bg-cover bg-center rounded-2xl relative flex items-center"
         style={{
-          backgroundImage: `url('http://ftp.granddesign.ir/images/background2.png')`,
+          backgroundImage: `url('https://ftp.granddesign.ir/images/background2.png')`,
         }}
       >
         <div className="absolute inset-0 bg-black/40 rounded-2xl"></div>
