@@ -9,7 +9,7 @@ const nextConfig = {
     //  اجازه لود عکس از FTP
     remotePatterns: [
       {
-        protocol: "https",
+        protocol: "http",
         hostname: "ftp.granddesign.ir",
         pathname: "/**",
       },

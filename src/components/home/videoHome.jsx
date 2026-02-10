@@ -14,12 +14,12 @@ import {
 const videos = [
   {
     id: 1,
-    src: "https://ftp.granddesign.ir/videos/1.mp4",
+    src: "http://ftp.granddesign.ir/videos/1.mp4",
     title: "انیمیشن 1",
   },
   {
     id: 2,
-    src: "https://ftp.granddesign.ir/videos/videoHome.mp4",
+    src: "http://ftp.granddesign.ir/videos/videoHome.mp4",
     title: "انیمیشن 2",
   },
 ];
