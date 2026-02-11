@@ -28,9 +28,11 @@
 //   );
 // }
 
+
 import "./globals.css";
 
 export const metadata = {
+  viewport: "width=device-width, initial-scale=1",
   title: {
     default: "گراند دیزاین | شرکت طراحی، معماری و برندینگ",
     template: "%s | گراند دیزاین",
@@ -41,7 +43,7 @@ export const metadata = {
 
   metadataBase: new URL("https://granddesign.ir"),
 
-  viewport: "width=device-width, initial-scale=1",
+  // viewport: "width=device-width, initial-scale=1",
 
   icons: {
     icon: "/favicon.ico",
@@ -58,6 +60,7 @@ export const metadata = {
     type: "website",
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (
