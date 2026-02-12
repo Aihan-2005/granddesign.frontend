@@ -43,9 +43,9 @@ export default function BackgroundImage() {
               />
 
               {/* متن روی اسلاید */}
-              <div className="absolute top-[45%] md:top-[42%] right-[8%] text-right flex flex-col items-end z-10">
+              <div className="absolute top-[45%] md:top-[32%] md:right-2 right-[6%] text-right flex flex-col items-end z-10">
                 <p
-                  className="text-white font-bold drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]
+                  className="text-white self-start right-0 font-bold drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]
                   text-[24px] sm:text-[36px] md:text-[48px] leading-tight"
                 >
                   {slide.title}
@@ -57,7 +57,7 @@ export default function BackgroundImage() {
 
                 <a
                   href="tel:09333840658"
-                  className="w-[160px] py-2 text-[13px] font-medium text-white rounded-md
+                  className=" self-center w-[160px] py-2 text-[13px] font-medium text-white rounded-md
                   bg-gradient-to-r from-emerald-500 to-teal-600 transition-all duration-300
                   hover:scale-[1.07] hover:shadow-lg text-center"
                 >

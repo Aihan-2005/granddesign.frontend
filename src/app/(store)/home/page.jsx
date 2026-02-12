@@ -13,7 +13,7 @@ import TeamSection from "@/components/home/teamsection";
 
 export default function HomePage(){
     return (
-        <>
+        <div style={{overflowX:"hidden"}}>
             <BackgroundImage/>
 
             <div className="px-[50px]">
@@ -43,6 +43,6 @@ export default function HomePage(){
 
 
 
-        </>
+        </div>
     )
 }
