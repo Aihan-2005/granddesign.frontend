@@ -6,9 +6,9 @@ import clsx from "clsx";
 
 
 const images = [
-    '/images/slider4.jpg',
-    '/images/slider5.jpg',
-    '/images/slider6.jpg',
+    '/images/',
+    '/images/',
+    '/images/',
 ];
 
 export default function FirstPage(){

@@ -1,15 +1,9 @@
 "use client";
-import Header from "./../Headers";
 import { Plus, Heart } from "lucide-react";
 import { useCartStore } from "@/zustand/cartStore";
 import { motion, AnimatePresence } from "framer-motion";
 import { useWishlistStore } from "@/zustand/favoritesStore";
 import { forwardRef } from "react";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { getProducts, getSpecialProducts } from "@/apis/products";
-import categories from "@/data/categories";
-import CategoryList from "./CategoryList";
 
 const ProductCard = forwardRef(({ product, isActive }, ref) => {
   const { addItem, items } = useCartStore();
@@ -42,7 +36,7 @@ const ProductCard = forwardRef(({ product, isActive }, ref) => {
         />
       </motion.button>
 
-      <div className="relative overflow-hidden rounded-lg mb-4 h-48 bg-gray-100 flex items-center justify-center">
+      <div className="relative overflow-hidden rounded-lg mb-4 h-48 bg-gray-200 flex items-center justify-center">
         {product.image ? (
           <motion.img
             src={product.image}
@@ -112,69 +106,19 @@ const ProductCard = forwardRef(({ product, isActive }, ref) => {
   );
 });
 
-export default function FirstProduct() {
-  const searchParams = useSearchParams();
-  const [activeProductId, setActiveProductId] = useState(null);
-  const [products, setProducts] = useState([]);
-  const [specialProductsList, setSpecialProductsList] = useState([]);
-  const productRefs = useRef({});
+ProductCard.displayName = "ProductCard";
 
-  useEffect(() => {
-    // Load data (mock or API)
-    async function loadData() {
-      const all = await getProducts();
-      const special = await getSpecialProducts();
-      setProducts(all);
-      setSpecialProductsList(special);
-    }
-    loadData();
-  }, []);
-
-  useEffect(() => {
-    const productId = searchParams.get("product");
-    if (productId) {
-      const id = parseInt(productId);
-      setActiveProductId(id);
-      setTimeout(() => {
-        const ref = productRefs.current[id];
-        if (ref) {
-          ref.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      }, 100); // Small delay to ensure DOM is ready
-    }
-  }, [searchParams]);
-
+export default function ProductsList({ products = [] }) {
   return (
-    <>
-      <Header />
-      <section className="bg-gray-300 font-bold text-center py-20 mb-8">
-        <h1 className="text-4xl font-bold text-green-900 mb-2">
-          به فروشگاه ما خوش آمدید
-        </h1>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-4 mb-12">
-        <h1 className="text-2xl font-semibold text-right mb-5">
-          محصولات ویژه ما
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {specialProductsList.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              isActive={activeProductId === product.id}
-              ref={(el) => (productRefs.current[product.id] = el)}
-            />
-          ))}
-        </div>
-
-        <section className="flex items-center justify-center font-bold py-20 mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">تمام محصولات ما</h1>
-        </section>
-
-        <CategoryList categories={categories} />
-      </section>
-    </>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          isActive={false}
+          ref={null}
+        />
+      ))}
+    </div>
   );
 }

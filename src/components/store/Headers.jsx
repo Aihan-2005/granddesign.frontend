@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import { Search, User, Heart, ShoppingCart } from "lucide-react";
@@ -8,7 +7,13 @@ import { useCartStore } from "@/zustand/cartStore";
 import { useMenuStore } from "@/zustand/store";
 import { useWishlistStore } from "@/zustand/favoritesStore";
 
-function IconButton({ icon, ariaLabel, onClick, hasBadge = false, badgeCount = 0 }) {
+function IconButton({
+  icon,
+  ariaLabel,
+  onClick,
+  hasBadge = false,
+  badgeCount = 0,
+}) {
   return (
     <button
       aria-label={ariaLabel}
@@ -17,7 +22,8 @@ function IconButton({ icon, ariaLabel, onClick, hasBadge = false, badgeCount = 0
     >
       {icon}
       {hasBadge && badgeCount > 0 && (
-        <span className="
+        <span
+          className="
           absolute -top-2 -right-2
           bg-red-500 text-white
           text-xs font-bold
@@ -25,7 +31,8 @@ function IconButton({ icon, ariaLabel, onClick, hasBadge = false, badgeCount = 0
           w-5 h-5
           flex items-center justify-center
           cursor-pointer
-        ">
+        "
+        >
           {badgeCount}
         </span>
       )}
@@ -40,7 +47,7 @@ export default function Header() {
     { title: "home", textTitle: "خانه", href: "/" },
     { title: "portfolio", textTitle: "چرا ما ", href: "/why-us" },
     { title: "about", textTitle: " فروشگاه", href: "/store" },
-    { title: "product tracking", textTitle: "پیگیری سفارش", href: "#" }
+    { title: "product tracking", textTitle: "پیگیری سفارش", href: "#" },
   ];
 
   const openSearch = useSearchStore((state) => state.openSearch);
@@ -48,8 +55,10 @@ export default function Header() {
   const openCart = useCartStore((state) => state.openCart);
   const cartItems = useCartStore((state) => state.items);
 
-  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
-  
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  );
 
   const totalWishlistItems = wishlistItems.length;
 
@@ -60,17 +69,29 @@ export default function Header() {
           <Link href="/">granddesign</Link>
         </div>
 
-        <nav className="hidden md:flex gap-6 text-sm md:text-lg font-medium text-emerald-600">
+        <nav
+          className="hidden md:flex gap-6 text-sm md:text-lg font-medium text-emerald-600"
+          dir="rtl"
+        >
           <Link className="hover:text-black transition cursor-pointer" href="/">
             خانه
           </Link>
-          <Link className="hover:text-black transition cursor-pointer" href="/why-us">
+          <Link
+            className="hover:text-black transition cursor-pointer"
+            href="/why-us"
+          >
             چرا ما
           </Link>
-          <Link className="hover:text-black transition cursor-pointer" href="/store">
+          <Link
+            className="hover:text-black transition cursor-pointer"
+            href="/store"
+          >
             فروشگاه
           </Link>
-          <Link className="hover:text-black transition cursor-pointer" href="/productTracking">
+          <Link
+            className="hover:text-black transition cursor-pointer"
+            href="/productTracking"
+          >
             پیگیری سفارش
           </Link>
         </nav>
@@ -88,15 +109,14 @@ export default function Header() {
             onClick={openLogin}
           />
 
-          
-          <IconButton 
-            icon={<Heart size={20} />} 
+          <IconButton
+            icon={<Heart size={20} />}
             ariaLabel="علاقه‌مندی‌ها"
             onClick={openFavorites}
             hasBadge={true}
             badgeCount={totalWishlistItems}
           />
-          
+
           <IconButton
             icon={<ShoppingCart size={20} />}
             ariaLabel="سبد خرید"
@@ -159,7 +179,7 @@ export default function Header() {
               <Link
                 href={item.href}
                 className="flex items-center p-2 text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-500 group"
-                onClick={closeMenu} 
+                onClick={closeMenu}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +202,6 @@ export default function Header() {
         </ul>
       </div>
 
-      
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/30 z-40 md:hidden"
