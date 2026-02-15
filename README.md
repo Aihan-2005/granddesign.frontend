@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 fun change
 
+another fun change
+
 ## Getting Started
 
 First, run the development server:
