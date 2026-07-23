@@ -8,7 +8,7 @@ import NewProjectsHome from "@/components/home/newProjects";
 import Team from "@/components/home/comment";
 import VR360  from "@/components/home/VR";
 import TeamSection from "@/components/home/teamsection";
-
+import Blog from '@/components/home/blog'
 
 
 export default function HomePage(){
@@ -41,6 +41,9 @@ export default function HomePage(){
             {/* <TeamSection/> */}
                         
 
+            <div className="px-[50px]">
+            <Blog/>
+            </div>
 
 
         </div>
