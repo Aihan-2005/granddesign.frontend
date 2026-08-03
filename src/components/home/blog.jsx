@@ -28,7 +28,7 @@ export default function WeblogHome() {
         </div>
         <Link 
           href="/blog" 
-          className="bg-gradient-to-r from-green-700 to-green-800 text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
+          className=" bg-green-600 text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
         >
           مشاهده همه مقالات
         </Link>
@@ -37,7 +37,7 @@ export default function WeblogHome() {
       <div className="relative">
         <button
           onClick={() => scroll('right')}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition hidden lg:block"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-green-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition hidden lg:block"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -64,7 +64,7 @@ export default function WeblogHome() {
               href={`/blog/${post.slug}`}
               className="group block flex-shrink-0 w-[350px] md:w-[380px]"
             >
-              <div className="bg-green-500 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 h-full border border-green-700">
+              <div className="bg-neutral-600 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 h-full border border-neutral-800 hover:border-green-700">
                 <div className="relative h-56 w-full overflow-hidden">
                   <Image
                     src={post.image}
@@ -97,11 +97,11 @@ export default function WeblogHome() {
                     {post.excerpt}
                   </p>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-green-700">
+                  <div className="flex items-center justify-between pt-4 border-t border-neutral-700">
                     <span className="text-sm text-gray-400">
                       {post.author}
                     </span>
-                    <span className="text-green-400 font-semibold group-hover:gap-2 flex items-center gap-1 transition-all">
+                    <span className="text-green-400 font-semibold group-hover:gap-2 flex items-center gap-1 transition-all hover:text-green-600 duration-400">
                       ادامه مطلب
                       <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
